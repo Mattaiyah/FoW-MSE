@@ -1,0 +1,321 @@
+﻿mse version: 2.0.0
+version: 2013-12-15
+short name: normal
+position hint: 001
+icon: 1.png
+installer group: fow/symbol-font
+
+image font size: 14
+horizontal space: 2
+######################################## Full Art Symbols
+symbol:
+	code: B
+	image: black-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: G
+	image: green-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: R
+	image: red-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: U
+	image: blue-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: W
+	image: white-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: V
+	image: void-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: M
+	image: moon-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: 0
+	image: 0-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: 1
+	image: 1-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: 2
+	image: 2-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: 3
+	image: 3-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: 4
+	image: 4-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: 5
+	image: 5-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: 6
+	image: 6-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: 7
+	image: 7-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: 8
+	image: 8-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: 9
+	image: 9-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: X
+	image: X-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: T
+	image: rest-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: activate
+	image: activate-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: continuous
+	image: continuous-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: enter
+	image: enter-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: shift
+	image: shift-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: incarnation
+	image: incarnation-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: judgment
+	image: judgment-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: stealth
+	image: stealth-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: flying
+	image: flying-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: imperishable
+	image: imperishable-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: pierce
+	image: pierce-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: swiftness
+	image: swiftness-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: targetattack
+	image: targetattack-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: awakening
+	image: awakening-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: evolution
+	image: evolution-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: explode
+	image: explode-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: remnant
+	image: remnant-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: quickcast
+	image: quickcast-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: trigger
+	image: trigger-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: firststrike
+	image: firststrike-fa.png
+	enabled: { full_art() }
+	draw text: -1
+symbol:
+	code: shift
+	image: shift-fa.png
+	enabled: { full_art() }
+	draw text: -1
+	
+######################################## Regular Symbols
+symbol:
+	code: 0
+	image: 0.png
+symbol:
+	code: 1
+	image: 1.png
+symbol:
+	code: 2
+	image: 2.png
+symbol:
+	code: 3
+	image: 3.png
+symbol:
+	code: 4
+	image: 4.png
+symbol:
+	code: 5
+	image: 5.png
+symbol:
+	code: 6
+	image: 6.png
+symbol:
+	code: 7
+	image: 7.png
+symbol:
+	code: 8
+	image: 8.png
+symbol:
+	code: 9
+	image: 9.png
+symbol:
+	code: X
+	image: X.png
+symbol:
+	code: activate
+	image: activate.png
+symbol:
+	code: continuous
+	image: continuous.png
+symbol:
+	code: enter
+	image: enter.png
+symbol:
+	code: incarnation
+	image: incarnation.png
+symbol:
+	code: judgment
+	image: judgment.png
+symbol:
+	code: stealth
+	image: stealth.png
+symbol:
+	code: flying
+	image: flying.png
+symbol:
+	code: imperishable
+	image: imperishable.png
+symbol:
+	code: pierce
+	image: pierce.png
+symbol:
+	code: swiftness
+	image: swiftness.png
+symbol:
+	code: targetattack
+	image: targetattack.png
+symbol:
+	code: awakening
+	image: awakening.png
+symbol:
+	code: evolution
+	image: evolution.png
+symbol:
+	code: explode
+	image: explode.png
+symbol:
+	code: remnant
+	image: remnant.png
+symbol:
+	code: quickcast
+	image: quickcast.png
+symbol:
+	code: trigger
+	image: trigger.png
+symbol:
+	code: firststrike
+	image: firststrike.png
+symbol:
+	code: shift
+	image: shift.png
+symbol:
+	code: B
+	image: black.png
+symbol:
+	code: G
+	image: green.png
+symbol:
+	code: R
+	image: red.png
+symbol:
+	code: U
+	image: blue.png
+symbol:
+	code: W
+	image: white.png
+symbol:
+	code: V
+	image: void.png
+symbol:
+	code: M
+	image: moon.png
+symbol:
+	code: T
+	image: rest.png

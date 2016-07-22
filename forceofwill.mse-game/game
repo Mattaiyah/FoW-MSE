@@ -1,0 +1,538 @@
+﻿mse version: 2.0.0
+short name: Force of Will
+full name: Force of Will
+position hint: 22
+installer group: fow/game
+
+init script: include file: script
+
+card field:
+	type: image
+	name: card_art
+	description: The card art
+	show statistics: false
+	editable: true
+	
+card field:
+	type: image
+	name: card_background
+	description: The card's foreground art. !!! You cannot modify the card cost with this active !!!
+	show statistics: false
+	editable: true
+
+card field:
+	type: image
+	name: layer
+	description: The card borders
+	show statistics: false
+	editable: false
+	
+card field:
+	type: text
+	name: card_name
+	description: The name of the card
+	card list column: 1
+	card list visible: true
+	card list width: 100
+	card list alignment: left
+
+card field:
+	type: choice
+	name: color
+	description: The card's color
+	choice: void
+	choice: white
+	choice: red
+	choice: blue
+	choice: green
+	choice: black
+	choice: GB
+	choice: RB
+	choice: RG
+	choice: RU
+	choice: UB
+	choice: UG
+	choice: WB
+	choice: WG
+	choice: WR
+	choice: WU
+	card list column: 4
+	card list visible: true
+	card list width: 100
+	card list alignment: center
+	
+card field:
+	type: text
+	name: race
+	description: The race of the card
+	
+card field:
+	type: text
+	name: ATK
+	description: The ATK of the card
+	card list column: 2
+	card list visible: true
+	card list width: 100
+	card list alignment: center
+	
+card field:
+	type: text
+	name: DEF
+	description: The DEF of the card
+	card list column: 3
+	card list visible: true
+	card list width: 100
+	card list alignment: center
+	
+card field:
+	type: choice
+	name: canbattle
+	description: Does this card have ATK/DEF or can it not battle?
+	choice: atkdef
+	choice: cannotbattle
+	
+card field:
+	type: text
+	name: artist
+	description: The artist of the art
+
+card field:
+	type: text
+	name: card_id
+	editable: true
+	save value: false
+	identifying: true
+	script: card_serial()
+	description: Serial of the card
+	description: The ID of the card
+	show statistics: false
+	
+card field:
+	type: text
+	name: rules
+	description: Rules text. PRESS SHIFT+TAB TO ACCESS FLAVOR TEXT.
+	multi line: true
+	show statistics: false
+
+card field:
+	type: text
+	name: flavor
+	description: The flavor of the card.
+	multi line: true
+	show statistics: false
+
+card field:
+	type: choice
+	name: cardtype
+	description: Type of card
+	choice: ruler
+	choice: jruler
+	choice: resonator
+	choice: spell
+	choice: regalia
+	choice: stone
+	
+card field:
+	type: choice
+	name: srborder
+	description: Do you want your SR to have a foreground?
+	choice: No
+	choice: Yes
+	
+card field:
+	type: choice
+	name: rarity
+	description: Determines the card border for Resonators and Spells
+	choice: C
+	choice: U
+	choice: R
+	choice: SR
+
+card field:
+	type: choice
+	name: resStatColor
+	description: The matches the card's color. Transparent section where ATK/DEF go for Resonators
+	choice: default
+	editable: false
+	
+card field:
+	type: choice
+	name: spellStatColor
+	description: The matches the card's color. Transparent section where type go for Spells
+	choice: default
+	editable: false
+	
+card field:
+	type: choice
+	name: topBarColor
+	description: The matches the card's color. Transparent section for the card name
+	choice: default
+	
+card field:
+	type: choice
+	name: costwheel1
+	description: Cost Wheel
+	choice: blank
+	choice: white
+	choice: red
+	choice: blue
+	choice: green
+	choice: black
+	choice: void
+	choice: moon
+	
+card field:
+	type: choice
+	name: costwheel2
+	description: Cost Wheel
+	choice: blank
+	choice: white
+	choice: red
+	choice: blue
+	choice: green
+	choice: black
+	choice: void
+	choice: moon
+
+card field:
+	type: choice
+	name: costwheel3
+	description: Cost Wheel
+	choice: blank
+	choice: white
+	choice: red
+	choice: blue
+	choice: green
+	choice: black
+	choice: void
+	choice: moon
+	
+card field:
+	type: choice
+	name: costwheel4
+	description: Cost Wheel
+	choice: blank
+	choice: white
+	choice: red
+	choice: blue
+	choice: green
+	choice: black
+	choice: void
+	choice: moon
+	
+card field:
+	type: choice
+	name: costwheel5
+	description: Cost Wheel
+	choice: blank
+	choice: white
+	choice: red
+	choice: blue
+	choice: green
+	choice: black
+	choice: void
+	choice: moon
+	
+card field:
+	type: choice
+	name: colorless_cost
+	description: The colorless cost of the card
+	description: Cost Wheel
+	choice: none
+	choice: zero
+	choice: one
+	choice: two
+	choice: three
+	choice: four
+	choice: five
+	choice: six
+	choice: seven
+	choice: eight
+	choice: nine
+	choice: X
+	
+#### set fields
+
+set field:
+	type: text
+	name: set name
+	description: The name of the set.
+set field:
+	type: text
+	name: set id
+	description: The 3-letter reference of the series.
+	
+#### scripts
+
+add cards script:
+	name: &Core Deck
+	description: Add 105 cards.
+	script:
+		[ new_card([rarity: "SR", color: "white", cardtype: "resonator"])
+		, new_card([rarity: "SR", color: "white", cardtype: "resonator"])
+		, new_card([rarity: "R", color: "white", cardtype: "ruler"])
+		, new_card([rarity: "R", color: "white", cardtype: "jruler"])
+		, new_card([rarity: "R", color: "white", cardtype: "resonator"])
+		, new_card([rarity: "R", color: "white", cardtype: "spell"])
+		, new_card([rarity: "R", color: "white", cardtype: "spell"])
+		, new_card([rarity: "U", color: "white", cardtype: "spell"])
+		, new_card([rarity: "U", color: "white", cardtype: "spell"])
+		, new_card([rarity: "U", color: "white", cardtype: "resonator"])
+		, new_card([rarity: "U", color: "white", cardtype: "resonator"])
+		, new_card([rarity: "C", color: "white", cardtype: "resonator"])
+		, new_card([rarity: "C", color: "white", cardtype: "resonator"])
+		, new_card([rarity: "C", color: "white", cardtype: "resonator"])
+		, new_card([rarity: "C", color: "white", cardtype: "resonator"])
+		, new_card([rarity: "C", color: "white", cardtype: "spell"])
+		, new_card([rarity: "C", color: "white", cardtype: "spell"])
+		, new_card([rarity: "C", color: "white", cardtype: "spell"])
+		, new_card([rarity: "C", color: "white", cardtype: "spell"])
+		, new_card([rarity: "SR", color: "blue", cardtype: "resonator"])
+		, new_card([rarity: "SR", color: "blue", cardtype: "resonator"])
+		, new_card([rarity: "R", color: "blue", cardtype: "ruler"])
+		, new_card([rarity: "R", color: "blue", cardtype: "jruler"])
+		, new_card([rarity: "R", color: "blue", cardtype: "resonator"])
+		, new_card([rarity: "R", color: "blue", cardtype: "spell"])
+		, new_card([rarity: "R", color: "blue", cardtype: "spell"])
+		, new_card([rarity: "U", color: "blue", cardtype: "spell"])
+		, new_card([rarity: "U", color: "blue", cardtype: "spell"])
+		, new_card([rarity: "U", color: "blue", cardtype: "resonator"])
+		, new_card([rarity: "U", color: "blue", cardtype: "resonator"])
+		, new_card([rarity: "C", color: "blue", cardtype: "resonator"])
+		, new_card([rarity: "C", color: "blue", cardtype: "resonator"])
+		, new_card([rarity: "C", color: "blue", cardtype: "resonator"])
+		, new_card([rarity: "C", color: "blue", cardtype: "resonator"])
+		, new_card([rarity: "C", color: "blue", cardtype: "spell"])
+		, new_card([rarity: "C", color: "blue", cardtype: "spell"])
+		, new_card([rarity: "C", color: "blue", cardtype: "spell"])
+		, new_card([rarity: "C", color: "blue", cardtype: "spell"])
+		, new_card([rarity: "SR", color: "red", cardtype: "resonator"])
+		, new_card([rarity: "SR", color: "red", cardtype: "resonator"])
+		, new_card([rarity: "R", color: "red", cardtype: "ruler"])
+		, new_card([rarity: "R", color: "red", cardtype: "jruler"])
+		, new_card([rarity: "R", color: "red", cardtype: "resonator"])
+		, new_card([rarity: "R", color: "red", cardtype: "spell"])
+		, new_card([rarity: "R", color: "red", cardtype: "spell"])
+		, new_card([rarity: "U", color: "red", cardtype: "spell"])
+		, new_card([rarity: "U", color: "red", cardtype: "spell"])
+		, new_card([rarity: "U", color: "red", cardtype: "resonator"])
+		, new_card([rarity: "U", color: "red", cardtype: "resonator"])
+		, new_card([rarity: "C", color: "red", cardtype: "resonator"])
+		, new_card([rarity: "C", color: "red", cardtype: "resonator"])
+		, new_card([rarity: "C", color: "red", cardtype: "resonator"])
+		, new_card([rarity: "C", color: "red", cardtype: "resonator"])
+		, new_card([rarity: "C", color: "red", cardtype: "spell"])
+		, new_card([rarity: "C", color: "red", cardtype: "spell"])
+		, new_card([rarity: "C", color: "red", cardtype: "spell"])
+		, new_card([rarity: "C", color: "red", cardtype: "spell"])
+		, new_card([rarity: "SR", color: "green", cardtype: "resonator"])
+		, new_card([rarity: "SR", color: "green", cardtype: "resonator"])
+		, new_card([rarity: "R", color: "green", cardtype: "ruler"])
+		, new_card([rarity: "R", color: "green", cardtype: "jruler"])
+		, new_card([rarity: "R", color: "green", cardtype: "resonator"])
+		, new_card([rarity: "R", color: "green", cardtype: "spell"])
+		, new_card([rarity: "R", color: "green", cardtype: "spell"])
+		, new_card([rarity: "U", color: "green", cardtype: "spell"])
+		, new_card([rarity: "U", color: "green", cardtype: "spell"])
+		, new_card([rarity: "U", color: "green", cardtype: "resonator"])
+		, new_card([rarity: "U", color: "green", cardtype: "resonator"])
+		, new_card([rarity: "C", color: "green", cardtype: "resonator"])
+		, new_card([rarity: "C", color: "green", cardtype: "resonator"])
+		, new_card([rarity: "C", color: "green", cardtype: "resonator"])
+		, new_card([rarity: "C", color: "green", cardtype: "resonator"])
+		, new_card([rarity: "C", color: "green", cardtype: "spell"])
+		, new_card([rarity: "C", color: "green", cardtype: "spell"])
+		, new_card([rarity: "C", color: "green", cardtype: "spell"])
+		, new_card([rarity: "C", color: "green", cardtype: "spell"])
+		, new_card([rarity: "SR", color: "black", cardtype: "resonator"])
+		, new_card([rarity: "SR", color: "black", cardtype: "resonator"])
+		, new_card([rarity: "R", color: "black", cardtype: "ruler"])
+		, new_card([rarity: "R", color: "black", cardtype: "jruler"])
+		, new_card([rarity: "R", color: "black", cardtype: "resonator"])
+		, new_card([rarity: "R", color: "black", cardtype: "spell"])
+		, new_card([rarity: "R", color: "black", cardtype: "spell"])
+		, new_card([rarity: "U", color: "black", cardtype: "spell"])
+		, new_card([rarity: "U", color: "black", cardtype: "spell"])
+		, new_card([rarity: "U", color: "black", cardtype: "resonator"])
+		, new_card([rarity: "U", color: "black", cardtype: "resonator"])
+		, new_card([rarity: "C", color: "black", cardtype: "resonator"])
+		, new_card([rarity: "C", color: "black", cardtype: "resonator"])
+		, new_card([rarity: "C", color: "black", cardtype: "resonator"])
+		, new_card([rarity: "C", color: "black", cardtype: "resonator"])
+		, new_card([rarity: "C", color: "black", cardtype: "spell"])
+		, new_card([rarity: "C", color: "black", cardtype: "spell"])
+		, new_card([rarity: "C", color: "black", cardtype: "spell"])
+		, new_card([rarity: "C", color: "black", cardtype: "spell"])
+		, new_card([rarity: "C", color: "void", cardtype: "stone"])
+		, new_card([rarity: "C", color: "void", cardtype: "stone"])
+		, new_card([rarity: "C", color: "void", cardtype: "stone"])
+		, new_card([rarity: "C", color: "void", cardtype: "stone"])
+		, new_card([rarity: "C", color: "void", cardtype: "stone"])
+		]
+#### packs
+pack type:
+	name: common
+	filter: card.rarity == "C"
+pack type:
+	name: uncommon
+	filter: card.rarity == "U"
+pack type:
+	name: rare
+	filter: card.rarity == "R" and card.cardtype != "stone" and card.cardtype != "jruler"
+pack type:
+	name: secret rare
+	filter: card.rarity == "SR"
+pack type:
+	name: magic stone
+	filter: card.race == "Magic Stone"
+pack type:
+	name: special magic stone
+	filter: card.cardtype == "stone" and card.rarity == "R"
+	
+pack type:
+	name: rulers
+	filter: card.cardtype == "ruler"
+pack type:
+	name: rare wo rulers
+	filter: card.rarity == "R" and card.cardtype != "stone" and card.cardtype != "ruler" and card.cardtype != "jruler"
+pack type:
+	name: rare or secret rare wo rulers
+	selectable: false
+	select: proportional
+	item:
+		name: secret rare
+		weight: 1
+	item:
+		name: rare wo rulers
+		weight: 1
+pack type:
+	name: rare or secret rare or stones wo rulers
+	selectable: false
+	select: proportional
+	item:
+		name: secret rare
+		weight: 1
+	item:
+		name: rare wo rulers
+		weight: 1
+	item:
+		name: magic stone
+		weight: 1
+	item:
+		name: special magic stone
+		weight: 1
+pack type:
+	name: rare or secret rare
+	selectable: false
+	select: proportional
+	item:
+		name: secret rare
+		weight: 1
+	item:
+		name: rare
+		weight: 1
+pack type:
+	name: rare or secret rare or stones
+	selectable: false
+	select: proportional
+	item:
+		name: secret rare
+		weight: 1
+	item:
+		name: rare
+		weight: 1
+	item:
+		name: magic stone
+		weight: 1
+	item:
+		name: special magic stone
+		weight: 1
+pack type:
+	name: foil
+	selectable: false
+	select: proportional
+	item:
+		name: secret rare
+		weight: 1
+	item:
+		name: rare
+		weight: 1
+	item:
+		name: uncommon
+		weight: 1
+	item:
+		name: common
+		weight: 1
+	item:
+		name: magic stone
+		weight: 1
+	item:
+		name: special magic stone
+		weight: 1
+pack type:
+	name: rulers
+	selectable: false
+	select: proportional
+	item:
+		name: ruler
+		weight: 1
+pack type:
+	name: foil wo rulers
+	selectable: false
+	select: proportional
+	item:
+		name: secret rare
+		weight: 1
+	item:
+		name: rare wo rulers
+		weight: 1
+	item:
+		name: uncommon
+		weight: 1
+	item:
+		name: common
+		weight: 1
+	item:
+		name: magic stone
+		weight: 1
+	item:
+		name: special magic stone
+		weight: 1
+		
+pack type:
+	name: standard booster pack
+	item:
+		name: common
+		amount: 5
+	item:
+		name: uncommon
+		amount: 2
+	item:
+		name: rare or secret rare wo rulers
+		amount: 1
+	item:
+		name: rare or secret rare or stones wo rulers
+		amount: 1
+	item:
+		name: foil
+		amount: 1
+pack type:
+	name: standard booster box
+	item:
+		name: common
+		amount: 180
+	item:
+		name: uncommon
+		amount: 72
+	item:
+		name: rare or secret rare wo rulers
+		amount: 36
+	item:
+		name: rare or secret rare or stones wo rulers
+		amount: 34
+	item:
+		name: foil wo rulers
+		amount: 36
+	item:
+		name: rulers
+		amount: 2
