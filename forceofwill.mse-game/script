@@ -42,6 +42,7 @@ card_background :=
 {
 	if type == "ruler" then input := "ruler_empty.png"
 	else if type == "resonator" and rarity == "SR" and style == "Lapis Cluster" then input := "lapis_SRresonator_empty.png"
+	else if type == "resonator" and rarity == "R" and style == "Lapis Cluster" then input := "lapis_Rresonator_empty.png"
 	else if type == "jruler" then input := "jruler_empty.png"
 	else if type == "resonator" then input := rarity + "resonator_empty.png"
 	else if type == "spell" then input := rarity + "spell_empty.png"
@@ -54,6 +55,7 @@ card_assets :=
 {
 	if type == "ruler" then input := ""
 	else if type == "resonator" and rarity == "SR" and style == "Lapis Cluster" then input := "lapis_SRresonator_ass.png"
+	else if type == "resonator" and rarity == "R" and style == "Lapis Cluster" then input := "lapis_Rresonator_ass.png"
 	else if type == "jruler" then input := ""
 	else if type == "resonator" then input := rarity + "resonator_ass.png"
 	else if type == "spell" then input := rarity + "spell_ass.png"
@@ -117,6 +119,11 @@ atk_def_font_size :=
 	if style == "Alice Cluster" then input := "49"
 	else if style == "Lapis Cluster" then input := "36"
 }
+shield :=
+{
+	if style == "Lapis Cluster" and type == "resonator" and rarity == "SR" then input := "lapis_SRresonator_cover.png"
+	else if style == "Lapis Cluster" and type == "resonator" and rarity == "R" then input := "lapis_Rresonator_cover.png"
+}
 rules_font :=
 {
 	if query == "font" and style == "Alice Cluster" then input := "Arial"
@@ -133,10 +140,7 @@ flavor_font :=
 	if query == "size" and style == "Alice Cluster" then input := 13
 	else if query == "size" and style == "Lapis Cluster" then input := 14
 }
-shield :=
-{
-	if style == "Lapis Cluster" and type == "resonator" and rarity == "SR" then input := "lapis_SRresonator_cover.png"
-}
+
 sr_skittles :=
 {
 	input := 1
