@@ -1,10 +1,10 @@
 ﻿mse version: 2.0.0
 game: forceofwill
-short name: Normal
-full name: Normal Card
+short name: Ruler
+full name: Ruler Side
 icon: ruler_icon.png
 position hint: 1
-installer group: fow/game/normal
+installer group: fow/game/ruler
 
 depends on: 
 	package: forceofwill.mse-game
@@ -274,7 +274,7 @@ card style:
 				(card.cardtype == "spell") then 41
 				else if card.cardtype != "resonator" then 0
 			}
-		z index: 5
+		z index: 1
 		render style: image
 		choice images:
 			default: {topcard_color(color: card.color)}
@@ -591,23 +591,23 @@ card style:
 	colorless_cost:
 		bottom: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then 125
+				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then 124
 				else if card.cardtype == "regalia" then 150
 				else if card.cardtype != "regalia" then 125
 			}
 		left: 
 			{
-				if styling.card_format == "Lapis Cluster" then 87
+				if styling.card_format == "Lapis Cluster" then 88
 				else 158
 			}
 		width: 
 			{
-				if styling.card_format == "Lapis Cluster" then 35
+				if styling.card_format == "Lapis Cluster" then 33
 				else 41
 			}
 		height:  
 			{
-				if styling.card_format == "Lapis Cluster" then 35
+				if styling.card_format == "Lapis Cluster" then 33
 				else 41
 			}
 		visible:
