@@ -718,6 +718,7 @@ card style:
 			name: {rules_font(query: "font", style: styling.card_format)}
 			size: {rules_font(query: "size", style: styling.card_format)}
 			color: rgb(0,0,0)
+			weight: {rules_font(query: "weight", style: styling.card_format)}
 		z index: 15
 		
 	flavor:
@@ -1485,6 +1486,7 @@ extra card style:
 			name: {rules_font(query: "font", style: styling.card_format)}
 			size: {rules_font(query: "size", style: styling.card_format)}
 			color: rgb(0,0,0)
+			weight: {rules_font(query: "weight", style: styling.card_format)}
 			shadow color: white
 			shadow displacement x: 1.5
 			shadow displacement y: 1.5
@@ -1525,6 +1527,7 @@ extra card style:
 			name: {rules_font(query: "font", style: styling.card_format)}
 			size: {rules_font(query: "size", style: styling.card_format)}
 			color: rgb(0,0,0)
+			weight: {rules_font(query: "weight", style: styling.card_format)}
 			shadow color: white
 			shadow displacement x: 0
 			shadow displacement y: 1.5
@@ -1565,6 +1568,7 @@ extra card style:
 			name: {rules_font(query: "font", style: styling.card_format)}
 			size: {rules_font(query: "size", style: styling.card_format)}
 			color: rgb(0,0,0)
+			weight: {rules_font(query: "weight", style: styling.card_format)}
 			shadow color: white
 			shadow displacement x: 1.5
 			shadow displacement y: -1.5
@@ -1605,6 +1609,7 @@ extra card style:
 			name: {rules_font(query: "font", style: styling.card_format)}
 			size: {rules_font(query: "size", style: styling.card_format)}
 			color: rgb(0,0,0)
+			weight: {rules_font(query: "weight", style: styling.card_format)}
 			shadow color: white
 			shadow displacement x: 0
 			shadow displacement y: -1.5
@@ -1645,6 +1650,7 @@ extra card style:
 			name: {rules_font(query: "font", style: styling.card_format)}
 			size: {rules_font(query: "size", style: styling.card_format)}
 			color: rgb(0,0,0)
+			weight: {rules_font(query: "weight", style: styling.card_format)}
 			shadow color: white
 			shadow displacement x: 1.5
 			shadow displacement y: 0
@@ -1685,6 +1691,7 @@ extra card style:
 			name: {rules_font(query: "font", style: styling.card_format)}
 			size: {rules_font(query: "size", style: styling.card_format)}
 			color: rgb(0,0,0)
+			weight: {rules_font(query: "weight", style: styling.card_format)}
 			shadow color: white
 			shadow displacement x: -1.5
 			shadow displacement y: 1.5
@@ -1725,6 +1732,7 @@ extra card style:
 			name: {rules_font(query: "font", style: styling.card_format)}
 			size: {rules_font(query: "size", style: styling.card_format)}
 			color: rgb(0,0,0)
+			weight: {rules_font(query: "weight", style: styling.card_format)}
 			shadow color: white
 			shadow displacement x: -1.5
 			shadow displacement y: 0
@@ -1765,6 +1773,7 @@ extra card style:
 			name: {rules_font(query: "font", style: styling.card_format)}
 			size: {rules_font(query: "size", style: styling.card_format)}
 			color: rgb(0,0,0)
+			weight: {rules_font(query: "weight", style: styling.card_format)}
 			shadow color: white
 			shadow displacement x: -1.5
 			shadow displacement y: -1.5
