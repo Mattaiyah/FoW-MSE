@@ -127,13 +127,15 @@ shield :=
 rules_font :=
 {
 	if query == "font" and style == "Alice Cluster" then input := "Arial"
-	else if query == "font" and style == "Lapis Cluster" then input := "Source Serif Pro"
+	else if query == "font" and style == "Lapis Cluster" then input := "AdobeFangsongStd-Regular"
+	else if query == "weight" and style == "Alice Cluster" then input := ""
+	else if query == "weight" and style == "Lapis Cluster" then input := ""
 	else if query == "size" and style == "Alice Cluster" then input := 13
-	else if query == "size" and style == "Lapis Cluster" then input := 16.5
+	else if query == "size" and style == "Lapis Cluster" then input := 16
 	else if query == "soft" and style == "Alice Cluster" then input := 1.1
-	else if query == "soft" and style == "Lapis Cluster" then input := 0.8
+	else if query == "soft" and style == "Lapis Cluster" then input := 0.89
 	else if query == "hard" and style == "Alice Cluster" then input := 1.5
-	else if query == "hard" and style == "Lapis Cluster" then input := 1.1
+	else if query == "hard" and style == "Lapis Cluster" then input := 1.35
 }
 flavor_font :=
 {
