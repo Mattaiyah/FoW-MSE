@@ -71,6 +71,7 @@ card style:
 		width: 
 			{
 				if card.srborder == "No" then 0
+				else if styling.card_format == "Lapis Cluster" and card.cardtype == "jruler" then 650
 				else if (card.cardtype == "jruler") or
 				(card.cardtype == "ruler") or
 				(card.cardtype == "regalia") then 0
@@ -126,7 +127,7 @@ card style:
 		font:
 			name: Constantia
 			size: 23
-			color: { if styling.is_full_art == "yes" then "rgb(255,255,255)" else font_color_changer(type: card.cardtype, rarity: card.rarity)}
+			color: { if styling.is_full_art == "yes" then "rgb(255,255,255)" else font_color_changer(type: card.cardtype, rarity: card.rarity, style: styling.card_format)}
 		z index: 12
 
 	color:
@@ -1364,7 +1365,7 @@ extra card style:
 					if card.rarity == "SR" then "black"
 					else if styling.is_full_art == "yes" then "black"
 					else if card.cardtype == "regalia" then "black"
-					else if styling.card_format == "Lapis Cluster" and (card.cardtype == "jruler" or card.cardtype == "ruler") then "black"
+					else if styling.card_format == "Lapis Cluster" then "black"
 					else "white"
 				}
 			shadow displacement x: 1
@@ -1436,7 +1437,7 @@ extra card style:
 					if card.rarity == "SR" then "black"
 					else if styling.is_full_art == "yes" then "black"
 					else if card.cardtype == "regalia" then "black"
-					else if styling.card_format == "Lapis Cluster" and (card.cardtype == "jruler" or card.cardtype == "ruler") then "black"
+					else if styling.card_format == "Lapis Cluster" then "black"
 					else "white"
 				}
 			shadow displacement x: 1
@@ -1508,7 +1509,7 @@ extra card style:
 					if card.rarity == "SR" then "black"
 					else if styling.is_full_art == "yes" then "black"
 					else if card.cardtype == "regalia" then "black"
-					else if styling.card_format == "Lapis Cluster" and (card.cardtype == "jruler" or card.cardtype == "ruler") then "black"
+					else if styling.card_format == "Lapis Cluster" then "black"
 					else "white"
 				}
 			shadow displacement x: -1
@@ -1580,7 +1581,7 @@ extra card style:
 					if card.rarity == "SR" then "black"
 					else if styling.is_full_art == "yes" then "black"
 					else if card.cardtype == "regalia" then "black"
-					else if styling.card_format == "Lapis Cluster" and (card.cardtype == "jruler" or card.cardtype == "ruler") then "black"
+					else if styling.card_format == "Lapis Cluster" then "black"
 					else "white"
 				}
 			shadow displacement x: -1
@@ -1596,7 +1597,7 @@ extra card style:
 			}
 		bottom: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then (856 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
+				if styling.card_format == "Lapis Cluster" then (855 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format) - (if ceil(set.stylesheet.card_style.flavor.content_height) == 0 then 10))
 				else if card.cardtype == "ruler" then (755 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
 				else if card.cardtype == "stone" then (749 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
 				else if card.cardtype == "jruler" then (683 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
@@ -1606,23 +1607,36 @@ extra card style:
 			}
 		left:
 			{
-				if styling.card_format == "Lapis Cluster" then 56
+				if styling.card_format == "Lapis Cluster" then 68
 				else if (card.cardtype == "ruler") or
 				(card.cardtype == "jruler") then 55
 				else 53
 			}
-		width: 544
-		height: { max(19, card_rules_height()) }
+		alignment:
+			{
+				if styling.card_format == "Lapis Cluster" then "middle"
+			}
+		width: 
+			{
+				if styling.card_format == "Lapis Cluster" then 520
+				else 544
+			}
+		height: 
+			script:
+				if styling.card_format == "Lapis Cluster" then (243 - card_flavor_height())
+				else (max(19, card_rules_height()))
 		line height hard: {rules_font(query: "hard", style: styling.card_format)}
 		line height soft: {rules_font(query: "soft", style: styling.card_format)}
 		symbol font:
 			name: forceofwill-symbols
-			size: 9
+			size: {symbol_font(query: "size", style: styling.card_format)}
+			scale down to: 9
 		font:
 			name: {rules_font(query: "font", style: styling.card_format)}
 			size: {rules_font(query: "size", style: styling.card_format)}
 			color: rgb(0,0,0)
 			weight: {rules_font(query: "weight", style: styling.card_format)}
+			scale down to: 13
 			shadow color: white
 			shadow displacement x: 1.5
 			shadow displacement y: 1.5
@@ -1637,7 +1651,7 @@ extra card style:
 			}
 		bottom: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then (856 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
+				if styling.card_format == "Lapis Cluster" then (855 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format) - (if ceil(set.stylesheet.card_style.flavor.content_height) == 0 then 10))
 				else if card.cardtype == "ruler" then (755 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
 				else if card.cardtype == "stone" then (749 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
 				else if card.cardtype == "jruler" then (683 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
@@ -1647,23 +1661,36 @@ extra card style:
 			}
 		left:
 			{
-				if styling.card_format == "Lapis Cluster" then 56
+				if styling.card_format == "Lapis Cluster" then 68
 				else if (card.cardtype == "ruler") or
 				(card.cardtype == "jruler") then 55
 				else 53
 			}
-		width: 544
-		height: { max(19, card_rules_height()) }
+		alignment:
+			{
+				if styling.card_format == "Lapis Cluster" then "middle"
+			}
+		width: 
+			{
+				if styling.card_format == "Lapis Cluster" then 520
+				else 544
+			}
+		height: 
+			script:
+				if styling.card_format == "Lapis Cluster" then (243 - card_flavor_height())
+				else (max(19, card_rules_height()))
 		line height hard: {rules_font(query: "hard", style: styling.card_format)}
 		line height soft: {rules_font(query: "soft", style: styling.card_format)}
 		symbol font:
 			name: forceofwill-symbols
-			size: 9
+			size: {symbol_font(query: "size", style: styling.card_format)}
+			scale down to: 9
 		font:
 			name: {rules_font(query: "font", style: styling.card_format)}
 			size: {rules_font(query: "size", style: styling.card_format)}
 			color: rgb(0,0,0)
 			weight: {rules_font(query: "weight", style: styling.card_format)}
+			scale down to: 13
 			shadow color: white
 			shadow displacement x: 0
 			shadow displacement y: 1.5
@@ -1678,7 +1705,7 @@ extra card style:
 			}
 		bottom: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then (856 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
+				if styling.card_format == "Lapis Cluster" then (855 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format) - (if ceil(set.stylesheet.card_style.flavor.content_height) == 0 then 10))
 				else if card.cardtype == "ruler" then (755 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
 				else if card.cardtype == "stone" then (749 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
 				else if card.cardtype == "jruler" then (683 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
@@ -1688,23 +1715,36 @@ extra card style:
 			}
 		left:
 			{
-				if styling.card_format == "Lapis Cluster" then 56
+				if styling.card_format == "Lapis Cluster" then 68
 				else if (card.cardtype == "ruler") or
 				(card.cardtype == "jruler") then 55
 				else 53
 			}
-		width: 544
-		height: { max(19, card_rules_height()) }
+		alignment:
+			{
+				if styling.card_format == "Lapis Cluster" then "middle"
+			}
+		width: 
+			{
+				if styling.card_format == "Lapis Cluster" then 520
+				else 544
+			}
+		height: 
+			script:
+				if styling.card_format == "Lapis Cluster" then (243 - card_flavor_height())
+				else (max(19, card_rules_height()))
 		line height hard: {rules_font(query: "hard", style: styling.card_format)}
 		line height soft: {rules_font(query: "soft", style: styling.card_format)}
 		symbol font:
 			name: forceofwill-symbols
-			size: 9
+			size: {symbol_font(query: "size", style: styling.card_format)}
+			scale down to: 9
 		font:
 			name: {rules_font(query: "font", style: styling.card_format)}
 			size: {rules_font(query: "size", style: styling.card_format)}
 			color: rgb(0,0,0)
 			weight: {rules_font(query: "weight", style: styling.card_format)}
+			scale down to: 13
 			shadow color: white
 			shadow displacement x: 1.5
 			shadow displacement y: -1.5
@@ -1719,7 +1759,7 @@ extra card style:
 			}
 		bottom: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then (856 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
+				if styling.card_format == "Lapis Cluster" then (855 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format) - (if ceil(set.stylesheet.card_style.flavor.content_height) == 0 then 10))
 				else if card.cardtype == "ruler" then (755 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
 				else if card.cardtype == "stone" then (749 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
 				else if card.cardtype == "jruler" then (683 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
@@ -1729,23 +1769,36 @@ extra card style:
 			}
 		left:
 			{
-				if styling.card_format == "Lapis Cluster" then 56
+				if styling.card_format == "Lapis Cluster" then 68
 				else if (card.cardtype == "ruler") or
 				(card.cardtype == "jruler") then 55
 				else 53
 			}
-		width: 544
-		height: { max(19, card_rules_height()) }
+		alignment:
+			{
+				if styling.card_format == "Lapis Cluster" then "middle"
+			}
+		width: 
+			{
+				if styling.card_format == "Lapis Cluster" then 520
+				else 544
+			}
+		height: 
+			script:
+				if styling.card_format == "Lapis Cluster" then (243 - card_flavor_height())
+				else (max(19, card_rules_height()))
 		line height hard: {rules_font(query: "hard", style: styling.card_format)}
 		line height soft: {rules_font(query: "soft", style: styling.card_format)}
 		symbol font:
 			name: forceofwill-symbols
-			size: 9
+			size: {symbol_font(query: "size", style: styling.card_format)}
+			scale down to: 9
 		font:
 			name: {rules_font(query: "font", style: styling.card_format)}
 			size: {rules_font(query: "size", style: styling.card_format)}
 			color: rgb(0,0,0)
 			weight: {rules_font(query: "weight", style: styling.card_format)}
+			scale down to: 13
 			shadow color: white
 			shadow displacement x: 0
 			shadow displacement y: -1.5
@@ -1760,7 +1813,7 @@ extra card style:
 			}
 		bottom: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then (856 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
+				if styling.card_format == "Lapis Cluster" then (855 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format) - (if ceil(set.stylesheet.card_style.flavor.content_height) == 0 then 10))
 				else if card.cardtype == "ruler" then (755 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
 				else if card.cardtype == "stone" then (749 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
 				else if card.cardtype == "jruler" then (683 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
@@ -1770,23 +1823,36 @@ extra card style:
 			}
 		left:
 			{
-				if styling.card_format == "Lapis Cluster" then 56
+				if styling.card_format == "Lapis Cluster" then 68
 				else if (card.cardtype == "ruler") or
 				(card.cardtype == "jruler") then 55
 				else 53
 			}
-		width: 544
-		height: { max(19, card_rules_height()) }
+		alignment:
+			{
+				if styling.card_format == "Lapis Cluster" then "middle"
+			}
+		width: 
+			{
+				if styling.card_format == "Lapis Cluster" then 520
+				else 544
+			}
+		height: 
+			script:
+				if styling.card_format == "Lapis Cluster" then (243 - card_flavor_height())
+				else (max(19, card_rules_height()))
 		line height hard: {rules_font(query: "hard", style: styling.card_format)}
 		line height soft: {rules_font(query: "soft", style: styling.card_format)}
 		symbol font:
 			name: forceofwill-symbols
-			size: 9
+			size: {symbol_font(query: "size", style: styling.card_format)}
+			scale down to: 9
 		font:
 			name: {rules_font(query: "font", style: styling.card_format)}
 			size: {rules_font(query: "size", style: styling.card_format)}
 			color: rgb(0,0,0)
 			weight: {rules_font(query: "weight", style: styling.card_format)}
+			scale down to: 13
 			shadow color: white
 			shadow displacement x: 1.5
 			shadow displacement y: 0
@@ -1801,7 +1867,7 @@ extra card style:
 			}
 		bottom: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then (856 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
+				if styling.card_format == "Lapis Cluster" then (855 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format) - (if ceil(set.stylesheet.card_style.flavor.content_height) == 0 then 10))
 				else if card.cardtype == "ruler" then (755 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
 				else if card.cardtype == "stone" then (749 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
 				else if card.cardtype == "jruler" then (683 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
@@ -1811,23 +1877,36 @@ extra card style:
 			}
 		left:
 			{
-				if styling.card_format == "Lapis Cluster" then 56
+				if styling.card_format == "Lapis Cluster" then 68
 				else if (card.cardtype == "ruler") or
 				(card.cardtype == "jruler") then 55
 				else 53
 			}
-		width: 544
-		height: { max(19, card_rules_height()) }
+		alignment:
+			{
+				if styling.card_format == "Lapis Cluster" then "middle"
+			}
+		width: 
+			{
+				if styling.card_format == "Lapis Cluster" then 520
+				else 544
+			}
+		height: 
+			script:
+				if styling.card_format == "Lapis Cluster" then (243 - card_flavor_height())
+				else (max(19, card_rules_height()))
 		line height hard: {rules_font(query: "hard", style: styling.card_format)}
 		line height soft: {rules_font(query: "soft", style: styling.card_format)}
 		symbol font:
 			name: forceofwill-symbols
-			size: 9
+			size: {symbol_font(query: "size", style: styling.card_format)}
+			scale down to: 9
 		font:
 			name: {rules_font(query: "font", style: styling.card_format)}
 			size: {rules_font(query: "size", style: styling.card_format)}
 			color: rgb(0,0,0)
 			weight: {rules_font(query: "weight", style: styling.card_format)}
+			scale down to: 13
 			shadow color: white
 			shadow displacement x: -1.5
 			shadow displacement y: 1.5
@@ -1842,7 +1921,7 @@ extra card style:
 			}
 		bottom: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then (856 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
+				if styling.card_format == "Lapis Cluster" then (855 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format) - (if ceil(set.stylesheet.card_style.flavor.content_height) == 0 then 10))
 				else if card.cardtype == "ruler" then (755 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
 				else if card.cardtype == "stone" then (749 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
 				else if card.cardtype == "jruler" then (683 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
@@ -1852,23 +1931,36 @@ extra card style:
 			}
 		left:
 			{
-				if styling.card_format == "Lapis Cluster" then 56
+				if styling.card_format == "Lapis Cluster" then 68
 				else if (card.cardtype == "ruler") or
 				(card.cardtype == "jruler") then 55
 				else 53
 			}
-		width: 544
-		height: { max(19, card_rules_height()) }
+		alignment:
+			{
+				if styling.card_format == "Lapis Cluster" then "middle"
+			}
+		width: 
+			{
+				if styling.card_format == "Lapis Cluster" then 520
+				else 544
+			}
+		height: 
+			script:
+				if styling.card_format == "Lapis Cluster" then (243 - card_flavor_height())
+				else (max(19, card_rules_height()))
 		line height hard: {rules_font(query: "hard", style: styling.card_format)}
 		line height soft: {rules_font(query: "soft", style: styling.card_format)}
 		symbol font:
 			name: forceofwill-symbols
-			size: 9
+			size: {symbol_font(query: "size", style: styling.card_format)}
+			scale down to: 9
 		font:
 			name: {rules_font(query: "font", style: styling.card_format)}
 			size: {rules_font(query: "size", style: styling.card_format)}
 			color: rgb(0,0,0)
 			weight: {rules_font(query: "weight", style: styling.card_format)}
+			scale down to: 13
 			shadow color: white
 			shadow displacement x: -1.5
 			shadow displacement y: 0
@@ -1883,7 +1975,7 @@ extra card style:
 			}
 		bottom: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then (856 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
+				if styling.card_format == "Lapis Cluster" then (855 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format) - (if ceil(set.stylesheet.card_style.flavor.content_height) == 0 then 10))
 				else if card.cardtype == "ruler" then (755 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
 				else if card.cardtype == "stone" then (749 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
 				else if card.cardtype == "jruler" then (683 - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
@@ -1893,23 +1985,36 @@ extra card style:
 			}
 		left:
 			{
-				if styling.card_format == "Lapis Cluster" then 56
+				if styling.card_format == "Lapis Cluster" then 68
 				else if (card.cardtype == "ruler") or
 				(card.cardtype == "jruler") then 55
 				else 53
 			}
-		width: 544
-		height: { max(19, card_rules_height()) }
+		alignment:
+			{
+				if styling.card_format == "Lapis Cluster" then "middle"
+			}
+		width: 
+			{
+				if styling.card_format == "Lapis Cluster" then 520
+				else 544
+			}
+		height: 
+			script:
+				if styling.card_format == "Lapis Cluster" then (243 - card_flavor_height())
+				else (max(19, card_rules_height()))
 		line height hard: {rules_font(query: "hard", style: styling.card_format)}
 		line height soft: {rules_font(query: "soft", style: styling.card_format)}
 		symbol font:
 			name: forceofwill-symbols
-			size: 9
+			size: {symbol_font(query: "size", style: styling.card_format)}
+			scale down to: 9
 		font:
 			name: {rules_font(query: "font", style: styling.card_format)}
 			size: {rules_font(query: "size", style: styling.card_format)}
 			color: rgb(0,0,0)
 			weight: {rules_font(query: "weight", style: styling.card_format)}
+			scale down to: 13
 			shadow color: white
 			shadow displacement x: -1.5
 			shadow displacement y: -1.5
@@ -1924,7 +2029,7 @@ extra card style:
 			}
 		bottom: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then 856
+				if styling.card_format == "Lapis Cluster" then 851
 				else if card.cardtype == "ruler" then 755
 				else if card.cardtype == "stone" then 749
 				else if card.cardtype == "jruler" then 683
@@ -1934,12 +2039,16 @@ extra card style:
 			}
 		left:
 			{
-				if styling.card_format == "Lapis Cluster" then 56
+				if styling.card_format == "Lapis Cluster" then 68
 				else if (card.cardtype == "ruler") or
 				(card.cardtype == "jruler") then 55
 				else 53
 			}
-		width: 544
+		width:  
+			{
+				if styling.card_format == "Lapis Cluster" then 520
+				else 544
+			}
 		height: { max(19, card_flavor_height()) }
 		font:
 			name: Constantia
@@ -1960,7 +2069,7 @@ extra card style:
 			}
 		bottom: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then 856
+				if styling.card_format == "Lapis Cluster" then 851
 				else if card.cardtype == "ruler" then 755
 				else if card.cardtype == "stone" then 749
 				else if card.cardtype == "jruler" then 683
@@ -1970,12 +2079,16 @@ extra card style:
 			}
 		left:
 			{
-				if styling.card_format == "Lapis Cluster" then 56
+				if styling.card_format == "Lapis Cluster" then 68
 				else if (card.cardtype == "ruler") or
 				(card.cardtype == "jruler") then 55
 				else 53
 			}
-		width: 544
+		width:  
+			{
+				if styling.card_format == "Lapis Cluster" then 520
+				else 544
+			}
 		height: { max(19, card_flavor_height()) }
 		font:
 			name: Constantia
@@ -1996,7 +2109,7 @@ extra card style:
 			}
 		bottom: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then 856
+				if styling.card_format == "Lapis Cluster" then 851
 				else if card.cardtype == "ruler" then 755
 				else if card.cardtype == "stone" then 749
 				else if card.cardtype == "jruler" then 683
@@ -2006,12 +2119,16 @@ extra card style:
 			}
 		left:
 			{
-				if styling.card_format == "Lapis Cluster" then 56
+				if styling.card_format == "Lapis Cluster" then 68
 				else if (card.cardtype == "ruler") or
 				(card.cardtype == "jruler") then 55
 				else 53
 			}
-		width: 544
+		width:  
+			{
+				if styling.card_format == "Lapis Cluster" then 520
+				else 544
+			}
 		height: { max(19, card_flavor_height()) }
 		font:
 			name: Constantia
@@ -2032,7 +2149,7 @@ extra card style:
 			}
 		bottom: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then 856
+				if styling.card_format == "Lapis Cluster" then 851
 				else if card.cardtype == "ruler" then 755
 				else if card.cardtype == "stone" then 749
 				else if card.cardtype == "jruler" then 683
@@ -2042,12 +2159,16 @@ extra card style:
 			}
 		left:
 			{
-				if styling.card_format == "Lapis Cluster" then 56
+				if styling.card_format == "Lapis Cluster" then 68
 				else if (card.cardtype == "ruler") or
 				(card.cardtype == "jruler") then 55
 				else 53
 			}
-		width: 544
+		width:  
+			{
+				if styling.card_format == "Lapis Cluster" then 520
+				else 544
+			}
 		height: { max(19, card_flavor_height()) }
 		font:
 			name: Constantia
@@ -2068,7 +2189,7 @@ extra card style:
 			}
 		bottom: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then 856
+				if styling.card_format == "Lapis Cluster" then 851
 				else if card.cardtype == "ruler" then 755
 				else if card.cardtype == "stone" then 749
 				else if card.cardtype == "jruler" then 683
@@ -2078,12 +2199,16 @@ extra card style:
 			}
 		left:
 			{
-				if styling.card_format == "Lapis Cluster" then 56
+				if styling.card_format == "Lapis Cluster" then 68
 				else if (card.cardtype == "ruler") or
 				(card.cardtype == "jruler") then 55
 				else 53
 			}
-		width: 544
+		width:  
+			{
+				if styling.card_format == "Lapis Cluster" then 520
+				else 544
+			}
 		height: { max(19, card_flavor_height()) }
 		font:
 			name: Constantia
@@ -2104,7 +2229,7 @@ extra card style:
 			}
 		bottom: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then 856
+				if styling.card_format == "Lapis Cluster" then 851
 				else if card.cardtype == "ruler" then 755
 				else if card.cardtype == "stone" then 749
 				else if card.cardtype == "jruler" then 683
@@ -2114,12 +2239,16 @@ extra card style:
 			}
 		left:
 			{
-				if styling.card_format == "Lapis Cluster" then 56
+				if styling.card_format == "Lapis Cluster" then 68
 				else if (card.cardtype == "ruler") or
 				(card.cardtype == "jruler") then 55
 				else 53
 			}
-		width: 544
+		width:  
+			{
+				if styling.card_format == "Lapis Cluster" then 520
+				else 544
+			}
 		height: { max(19, card_flavor_height()) }
 		font:
 			name: Constantia
@@ -2140,7 +2269,7 @@ extra card style:
 			}
 		bottom: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then 856
+				if styling.card_format == "Lapis Cluster" then 851
 				else if card.cardtype == "ruler" then 755
 				else if card.cardtype == "stone" then 749
 				else if card.cardtype == "jruler" then 683
@@ -2150,12 +2279,16 @@ extra card style:
 			}
 		left:
 			{
-				if styling.card_format == "Lapis Cluster" then 56
+				if styling.card_format == "Lapis Cluster" then 68
 				else if (card.cardtype == "ruler") or
 				(card.cardtype == "jruler") then 55
 				else 53
 			}
-		width: 544
+		width:  
+			{
+				if styling.card_format == "Lapis Cluster" then 520
+				else 544
+			}
 		height: { max(19, card_flavor_height()) }
 		font:
 			name: Constantia
@@ -2176,7 +2309,7 @@ extra card style:
 			}
 		bottom: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then 856
+				if styling.card_format == "Lapis Cluster" then 851
 				else if card.cardtype == "ruler" then 755
 				else if card.cardtype == "stone" then 749
 				else if card.cardtype == "jruler" then 683
@@ -2186,12 +2319,16 @@ extra card style:
 			}
 		left:
 			{
-				if styling.card_format == "Lapis Cluster" then 56
+				if styling.card_format == "Lapis Cluster" then 68
 				else if (card.cardtype == "ruler") or
 				(card.cardtype == "jruler") then 55
 				else 53
 			}
-		width: 544
+		width:  
+			{
+				if styling.card_format == "Lapis Cluster" then 520
+				else 544
+			}
 		height: { max(19, card_flavor_height()) }
 		font:
 			name: Constantia
@@ -2207,7 +2344,8 @@ extra card style:
 	cardshadow25:
 		visible:
 			{
-				if card.cardtype == "ruler" then false
+				if styling.card_format == "Lapis Cluster" then true
+				else if card.cardtype == "ruler" then false
 				else if card.cardtype == "jruler" then false
 				else if card.cardtype == "regalia" then false
 				else if card.cardtype == "stone" then false
@@ -2217,7 +2355,7 @@ extra card style:
 			}
 		top: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then (823 - card_rules_height() - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
+				if styling.card_format == "Lapis Cluster" then 562
 				else if card.cardtype == "ruler" then 842
 				else if card.cardtype == "stone" then 838
 				else if card.cardtype == "jruler" then 771
@@ -2227,7 +2365,8 @@ extra card style:
 			}
 		left: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then 56
+				if styling.card_format == "Lapis Cluster" and (card.cardtype == "ruler" or card.cardtype == "jruler") then 206
+				else if styling.card_format == "Lapis Cluster" then 68
 				else if card.cardtype == "ruler" then 242
 				else if card.cardtype == "stone" then 50
 				else if card.cardtype == "jruler" then 234
@@ -2237,7 +2376,9 @@ extra card style:
 			}
 		width: 
 			{
-				if card.cardtype == "ruler" then 253
+				if styling.card_format == "Lapis Cluster" and (card.cardtype == "ruler" or card.cardtype == "jruler") then 260
+				else if styling.card_format == "Lapis Cluster" then 342
+				else if card.cardtype == "ruler" then 253
 				else if card.cardtype == "stone" then 545
 				else if card.cardtype == "jruler" then 361
 				else if card.cardtype == "resonator" then 355
@@ -2247,13 +2388,18 @@ extra card style:
 		height: 30
 		alignment: 
 			{
-				if card.cardtype != "resonator" then "top center stretch if-overflow"
+				if styling.card_format == "Lapis Cluster" then "stretch if-overflow"
+				else if card.cardtype != "resonator" then "top center stretch if-overflow"
 				else if card.cardtype == "resonator" then "stretch if-overflow"
 			}
 		font:
 			name: Constantia
 			size: {font_size_changer(type: card.cardtype, style: styling.card_format)}
-			color: rgb(0,0,0)
+			color: 
+				{
+					if card.cardtype == "resonator" or styling.card_format == "Lapis Cluster" then "black"
+					else "white"
+				}
 			shadow color: white
 			shadow displacement x: 1.5
 			shadow displacement y: 1.5
@@ -2263,7 +2409,8 @@ extra card style:
 	cardshadow27:
 		visible:
 			{
-				if card.cardtype == "ruler" then false
+				if styling.card_format == "Lapis Cluster" then true
+				else if card.cardtype == "ruler" then false
 				else if card.cardtype == "jruler" then false
 				else if card.cardtype == "regalia" then false
 				else if card.cardtype == "stone" then false
@@ -2273,7 +2420,7 @@ extra card style:
 			}
 		top: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then (823 - card_rules_height() - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
+				if styling.card_format == "Lapis Cluster" then 562
 				else if card.cardtype == "ruler" then 842
 				else if card.cardtype == "stone" then 838
 				else if card.cardtype == "jruler" then 771
@@ -2283,7 +2430,8 @@ extra card style:
 			}
 		left: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then 56
+				if styling.card_format == "Lapis Cluster" and (card.cardtype == "ruler" or card.cardtype == "jruler") then 206
+				else if styling.card_format == "Lapis Cluster" then 68
 				else if card.cardtype == "ruler" then 242
 				else if card.cardtype == "stone" then 50
 				else if card.cardtype == "jruler" then 234
@@ -2293,7 +2441,9 @@ extra card style:
 			}
 		width: 
 			{
-				if card.cardtype == "ruler" then 253
+				if styling.card_format == "Lapis Cluster" and (card.cardtype == "ruler" or card.cardtype == "jruler") then 260
+				else if styling.card_format == "Lapis Cluster" then 342
+				else if card.cardtype == "ruler" then 253
 				else if card.cardtype == "stone" then 545
 				else if card.cardtype == "jruler" then 361
 				else if card.cardtype == "resonator" then 355
@@ -2303,13 +2453,18 @@ extra card style:
 		height: 30
 		alignment: 
 			{
-				if card.cardtype != "resonator" then "top center stretch if-overflow"
+				if styling.card_format == "Lapis Cluster" then "stretch if-overflow"
+				else if card.cardtype != "resonator" then "top center stretch if-overflow"
 				else if card.cardtype == "resonator" then "stretch if-overflow"
 			}
 		font:
 			name: Constantia
 			size: {font_size_changer(type: card.cardtype, style: styling.card_format)}
-			color: rgb(0,0,0)
+			color: 
+				{
+					if card.cardtype == "resonator" or styling.card_format == "Lapis Cluster" then "black"
+					else "white"
+				}
 			shadow color: white
 			shadow displacement x: 1.5
 			shadow displacement y: -1.5
@@ -2319,7 +2474,8 @@ extra card style:
 	cardshadow30:
 		visible:
 			{
-				if card.cardtype == "ruler" then false
+				if styling.card_format == "Lapis Cluster" then true
+				else if card.cardtype == "ruler" then false
 				else if card.cardtype == "jruler" then false
 				else if card.cardtype == "regalia" then false
 				else if card.cardtype == "stone" then false
@@ -2329,7 +2485,7 @@ extra card style:
 			}
 		top: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then (823 - card_rules_height() - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
+				if styling.card_format == "Lapis Cluster" then 562
 				else if card.cardtype == "ruler" then 842
 				else if card.cardtype == "stone" then 838
 				else if card.cardtype == "jruler" then 771
@@ -2339,7 +2495,8 @@ extra card style:
 			}
 		left: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then 56
+				if styling.card_format == "Lapis Cluster" and (card.cardtype == "ruler" or card.cardtype == "jruler") then 206
+				else if styling.card_format == "Lapis Cluster" then 68
 				else if card.cardtype == "ruler" then 242
 				else if card.cardtype == "stone" then 50
 				else if card.cardtype == "jruler" then 234
@@ -2349,7 +2506,9 @@ extra card style:
 			}
 		width: 
 			{
-				if card.cardtype == "ruler" then 253
+				if styling.card_format == "Lapis Cluster" and (card.cardtype == "ruler" or card.cardtype == "jruler") then 260
+				else if styling.card_format == "Lapis Cluster" then 342
+				else if card.cardtype == "ruler" then 253
 				else if card.cardtype == "stone" then 545
 				else if card.cardtype == "jruler" then 361
 				else if card.cardtype == "resonator" then 355
@@ -2359,13 +2518,18 @@ extra card style:
 		height: 30
 		alignment: 
 			{
-				if card.cardtype != "resonator" then "top center stretch if-overflow"
+				if styling.card_format == "Lapis Cluster" then "stretch if-overflow"
+				else if card.cardtype != "resonator" then "top center stretch if-overflow"
 				else if card.cardtype == "resonator" then "stretch if-overflow"
 			}
 		font:
 			name: Constantia
 			size: {font_size_changer(type: card.cardtype, style: styling.card_format)}
-			color: rgb(0,0,0)
+			color: 
+				{
+					if card.cardtype == "resonator" or styling.card_format == "Lapis Cluster" then "black"
+					else "white"
+				}
 			shadow color: white
 			shadow displacement x: -1.5
 			shadow displacement y: 1.5
@@ -2375,7 +2539,8 @@ extra card style:
 	cardshadow32:
 		visible:
 			{
-				if card.cardtype == "ruler" then false
+				if styling.card_format == "Lapis Cluster" then true
+				else if card.cardtype == "ruler" then false
 				else if card.cardtype == "jruler" then false
 				else if card.cardtype == "regalia" then false
 				else if card.cardtype == "stone" then false
@@ -2385,7 +2550,7 @@ extra card style:
 			}
 		top: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then (823 - card_rules_height() - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
+				if styling.card_format == "Lapis Cluster" then 562
 				else if card.cardtype == "ruler" then 842
 				else if card.cardtype == "stone" then 838
 				else if card.cardtype == "jruler" then 771
@@ -2395,7 +2560,8 @@ extra card style:
 			}
 		left: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then 56
+				if styling.card_format == "Lapis Cluster" and (card.cardtype == "ruler" or card.cardtype == "jruler") then 206
+				else if styling.card_format == "Lapis Cluster" then 68
 				else if card.cardtype == "ruler" then 242
 				else if card.cardtype == "stone" then 50
 				else if card.cardtype == "jruler" then 234
@@ -2405,7 +2571,9 @@ extra card style:
 			}
 		width: 
 			{
-				if card.cardtype == "ruler" then 253
+				if styling.card_format == "Lapis Cluster" and (card.cardtype == "ruler" or card.cardtype == "jruler") then 260
+				else if styling.card_format == "Lapis Cluster" then 342
+				else if card.cardtype == "ruler" then 253
 				else if card.cardtype == "stone" then 545
 				else if card.cardtype == "jruler" then 361
 				else if card.cardtype == "resonator" then 355
@@ -2415,13 +2583,18 @@ extra card style:
 		height: 30
 		alignment: 
 			{
-				if card.cardtype != "resonator" then "top center stretch if-overflow"
+				if styling.card_format == "Lapis Cluster" then "stretch if-overflow"
+				else if card.cardtype != "resonator" then "top center stretch if-overflow"
 				else if card.cardtype == "resonator" then "stretch if-overflow"
 			}
 		font:
 			name: Constantia
 			size: {font_size_changer(type: card.cardtype, style: styling.card_format)}
-			color: rgb(0,0,0)
+			color: 
+				{
+					if card.cardtype == "resonator" or styling.card_format == "Lapis Cluster" then "black"
+					else "white"
+				}
 			shadow color: white
 			shadow displacement x: -1.5
 			shadow displacement y: -1.5
@@ -2431,7 +2604,8 @@ extra card style:
 	cardshadow26:
 		visible:
 			{
-				if card.cardtype == "ruler" then false
+				if styling.card_format == "Lapis Cluster" then true
+				else if card.cardtype == "ruler" then false
 				else if card.cardtype == "jruler" then false
 				else if card.cardtype == "regalia" then false
 				else if card.cardtype == "stone" then false
@@ -2441,7 +2615,7 @@ extra card style:
 			}
 		top: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then (823 - card_rules_height() - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
+				if styling.card_format == "Lapis Cluster" then 562
 				else if card.cardtype == "ruler" then 842
 				else if card.cardtype == "stone" then 838
 				else if card.cardtype == "jruler" then 771
@@ -2451,7 +2625,8 @@ extra card style:
 			}
 		left: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then 56
+				if styling.card_format == "Lapis Cluster" and (card.cardtype == "ruler" or card.cardtype == "jruler") then 206
+				else if styling.card_format == "Lapis Cluster" then 68
 				else if card.cardtype == "ruler" then 242
 				else if card.cardtype == "stone" then 50
 				else if card.cardtype == "jruler" then 234
@@ -2461,7 +2636,9 @@ extra card style:
 			}
 		width: 
 			{
-				if card.cardtype == "ruler" then 253
+				if styling.card_format == "Lapis Cluster" and (card.cardtype == "ruler" or card.cardtype == "jruler") then 260
+				else if styling.card_format == "Lapis Cluster" then 342
+				else if card.cardtype == "ruler" then 253
 				else if card.cardtype == "stone" then 545
 				else if card.cardtype == "jruler" then 361
 				else if card.cardtype == "resonator" then 355
@@ -2471,13 +2648,18 @@ extra card style:
 		height: 30
 		alignment: 
 			{
-				if card.cardtype != "resonator" then "top center stretch if-overflow"
+				if styling.card_format == "Lapis Cluster" then "stretch if-overflow"
+				else if card.cardtype != "resonator" then "top center stretch if-overflow"
 				else if card.cardtype == "resonator" then "stretch if-overflow"
 			}
 		font:
 			name: Constantia
 			size: {font_size_changer(type: card.cardtype, style: styling.card_format)}
-			color: rgb(0,0,0)
+			color: 
+				{
+					if card.cardtype == "resonator" or styling.card_format == "Lapis Cluster" then "black"
+					else "white"
+				}
 			shadow color: white
 			shadow displacement x: 0
 			shadow displacement y: 1.5
@@ -2487,7 +2669,8 @@ extra card style:
 	cardshadow28:
 		visible:
 			{
-				if card.cardtype == "ruler" then false
+				if styling.card_format == "Lapis Cluster" then true
+				else if card.cardtype == "ruler" then false
 				else if card.cardtype == "jruler" then false
 				else if card.cardtype == "regalia" then false
 				else if card.cardtype == "stone" then false
@@ -2497,7 +2680,7 @@ extra card style:
 			}
 		top: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then (823 - card_rules_height() - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
+				if styling.card_format == "Lapis Cluster" then 562
 				else if card.cardtype == "ruler" then 842
 				else if card.cardtype == "stone" then 838
 				else if card.cardtype == "jruler" then 771
@@ -2507,7 +2690,8 @@ extra card style:
 			}
 		left: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then 56
+				if styling.card_format == "Lapis Cluster" and (card.cardtype == "ruler" or card.cardtype == "jruler") then 206
+				else if styling.card_format == "Lapis Cluster" then 68
 				else if card.cardtype == "ruler" then 242
 				else if card.cardtype == "stone" then 50
 				else if card.cardtype == "jruler" then 234
@@ -2517,7 +2701,9 @@ extra card style:
 			}
 		width: 
 			{
-				if card.cardtype == "ruler" then 253
+				if styling.card_format == "Lapis Cluster" and (card.cardtype == "ruler" or card.cardtype == "jruler") then 260
+				else if styling.card_format == "Lapis Cluster" then 342
+				else if card.cardtype == "ruler" then 253
 				else if card.cardtype == "stone" then 545
 				else if card.cardtype == "jruler" then 361
 				else if card.cardtype == "resonator" then 355
@@ -2527,13 +2713,18 @@ extra card style:
 		height: 30
 		alignment: 
 			{
-				if card.cardtype != "resonator" then "top center stretch if-overflow"
+				if styling.card_format == "Lapis Cluster" then "stretch if-overflow"
+				else if card.cardtype != "resonator" then "top center stretch if-overflow"
 				else if card.cardtype == "resonator" then "stretch if-overflow"
 			}
 		font:
 			name: Constantia
 			size: {font_size_changer(type: card.cardtype, style: styling.card_format)}
-			color: rgb(0,0,0)
+			color: 
+				{
+					if card.cardtype == "resonator" or styling.card_format == "Lapis Cluster" then "black"
+					else "white"
+				}
 			shadow color: white
 			shadow displacement x: 0
 			shadow displacement y: -1.5
@@ -2543,7 +2734,8 @@ extra card style:
 	cardshadow29:
 		visible:
 			{
-				if card.cardtype == "ruler" then false
+				if styling.card_format == "Lapis Cluster" then true
+				else if card.cardtype == "ruler" then false
 				else if card.cardtype == "jruler" then false
 				else if card.cardtype == "regalia" then false
 				else if card.cardtype == "stone" then false
@@ -2553,7 +2745,7 @@ extra card style:
 			}
 		top: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then (823 - card_rules_height() - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
+				if styling.card_format == "Lapis Cluster" then 562
 				else if card.cardtype == "ruler" then 842
 				else if card.cardtype == "stone" then 838
 				else if card.cardtype == "jruler" then 771
@@ -2563,7 +2755,8 @@ extra card style:
 			}
 		left: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then 56
+				if styling.card_format == "Lapis Cluster" and (card.cardtype == "ruler" or card.cardtype == "jruler") then 206
+				else if styling.card_format == "Lapis Cluster" then 68
 				else if card.cardtype == "ruler" then 242
 				else if card.cardtype == "stone" then 50
 				else if card.cardtype == "jruler" then 234
@@ -2573,7 +2766,9 @@ extra card style:
 			}
 		width: 
 			{
-				if card.cardtype == "ruler" then 253
+				if styling.card_format == "Lapis Cluster" and (card.cardtype == "ruler" or card.cardtype == "jruler") then 260
+				else if styling.card_format == "Lapis Cluster" then 342
+				else if card.cardtype == "ruler" then 253
 				else if card.cardtype == "stone" then 545
 				else if card.cardtype == "jruler" then 361
 				else if card.cardtype == "resonator" then 355
@@ -2583,13 +2778,18 @@ extra card style:
 		height: 30
 		alignment: 
 			{
-				if card.cardtype != "resonator" then "top center stretch if-overflow"
+				if styling.card_format == "Lapis Cluster" then "stretch if-overflow"
+				else if card.cardtype != "resonator" then "top center stretch if-overflow"
 				else if card.cardtype == "resonator" then "stretch if-overflow"
 			}
 		font:
 			name: Constantia
 			size: {font_size_changer(type: card.cardtype, style: styling.card_format)}
-			color: rgb(0,0,0)
+			color: 
+				{
+					if card.cardtype == "resonator" or styling.card_format == "Lapis Cluster" then "black"
+					else "white"
+				}
 			shadow color: white
 			shadow displacement x: 1.5
 			shadow displacement y: 0
@@ -2599,7 +2799,8 @@ extra card style:
 	cardshadow31:
 		visible:
 			{
-				if card.cardtype == "ruler" then false
+				if styling.card_format == "Lapis Cluster" then true
+				else if card.cardtype == "ruler" then false
 				else if card.cardtype == "jruler" then false
 				else if card.cardtype == "regalia" then false
 				else if card.cardtype == "stone" then false
@@ -2609,7 +2810,7 @@ extra card style:
 			}
 		top: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then (823 - card_rules_height() - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
+				if styling.card_format == "Lapis Cluster" then 562
 				else if card.cardtype == "ruler" then 842
 				else if card.cardtype == "stone" then 838
 				else if card.cardtype == "jruler" then 771
@@ -2619,7 +2820,8 @@ extra card style:
 			}
 		left: 
 			{
-				if styling.card_format == "Lapis Cluster" and card.cardtype == "resonator" then 56
+				if styling.card_format == "Lapis Cluster" and (card.cardtype == "ruler" or card.cardtype == "jruler") then 206
+				else if styling.card_format == "Lapis Cluster" then 68
 				else if card.cardtype == "ruler" then 242
 				else if card.cardtype == "stone" then 50
 				else if card.cardtype == "jruler" then 234
@@ -2629,7 +2831,9 @@ extra card style:
 			}
 		width: 
 			{
-				if card.cardtype == "ruler" then 253
+				if styling.card_format == "Lapis Cluster" and (card.cardtype == "ruler" or card.cardtype == "jruler") then 260
+				else if styling.card_format == "Lapis Cluster" then 342
+				else if card.cardtype == "ruler" then 253
 				else if card.cardtype == "stone" then 545
 				else if card.cardtype == "jruler" then 361
 				else if card.cardtype == "resonator" then 355
@@ -2639,13 +2843,18 @@ extra card style:
 		height: 30
 		alignment: 
 			{
-				if card.cardtype != "resonator" then "top center stretch if-overflow"
+				if styling.card_format == "Lapis Cluster" then "stretch if-overflow"
+				else if card.cardtype != "resonator" then "top center stretch if-overflow"
 				else if card.cardtype == "resonator" then "stretch if-overflow"
 			}
 		font:
 			name: Constantia
 			size: {font_size_changer(type: card.cardtype, style: styling.card_format)}
-			color: rgb(0,0,0)
+			color: 
+				{
+					if card.cardtype == "resonator" or styling.card_format == "Lapis Cluster" then "black"
+					else "white"
+				}
 			shadow color: white
 			shadow displacement x: -1.5
 			shadow displacement y: 0
