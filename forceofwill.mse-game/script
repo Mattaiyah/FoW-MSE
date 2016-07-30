@@ -11,14 +11,9 @@ card_flavor_height :=
 {
 	ceil(set.stylesheet.card_style.flavor.content_height)
 }
-card_rules_flavor_gap :=
-{
-	if ceil(set.stylesheet.card_style.flavor.content_height) == 0 then 0
-	else if ceil(set.stylesheet.card_style.flavor.content_height) != 0 then 12
-}
 card_color :=
 {
-	if style == "Lapis Cluster" and type == "resonator" then input := "color/" + color + "-fa.png"
+	if style == "Lapis Cluster" then input := "color/" + color + "-fa.png"
 	else if type == "jruler" then input := "color/resonator_" + color + ".png"
 	else if type == "spell" then input := "color/spell_" + color + ".png"
 	else if type == "regalia" then input := "color/spell_" + color + ".png"
@@ -36,13 +31,25 @@ spellcard_color :=
 }
 topcard_color :=
 {
-	input := "color/" + color + "top.png"
+	if type == "ruler" or type == "jruler" then input := "bars/lapis_" + color + ".png"
+	else input := "color/" + color + "top.png"
+}
+jrulerbutton :=
+{
+	if type == "jruler" then input := "jruler_btn.png"
+	else if type == "ruler" then input := "ruler_btn.png"
 }
 card_background :=
 {
-	if type == "ruler" then input := "ruler_empty.png"
-	else if type == "resonator" and rarity == "SR" and style == "Lapis Cluster" then input := "lapis_SRresonator_empty.png"
+	if type == "resonator" and rarity == "SR" and style == "Lapis Cluster" then input := "lapis_SRresonator_empty.png"
 	else if type == "resonator" and rarity == "R" and style == "Lapis Cluster" then input := "lapis_Rresonator_empty.png"
+	else if type == "resonator" and (rarity == "U" or rarity == "C") and style == "Lapis Cluster" then input := "lapis_CUresonator_empty.png"
+	else if type == "spell" and rarity == "SR" and style == "Lapis Cluster" then input := "lapis_SRspell_empty.png"
+	else if type == "spell" and rarity == "R" and style == "Lapis Cluster" then input := "lapis_Rspell_empty.png"
+	else if type == "spell" and (rarity == "U" or rarity == "C") and style == "Lapis Cluster" then input := "lapis_CUspell_empty.png"
+	else if type == "jruler" and style == "Lapis Cluster" then input := "lapis_jruler_empty.png"
+	else if type == "ruler" and style == "Lapis Cluster" then input := "lapis_ruler_empty.png"
+	else if type == "ruler" then input := "ruler_empty.png"
 	else if type == "jruler" then input := "jruler_empty.png"
 	else if type == "resonator" then input := rarity + "resonator_empty.png"
 	else if type == "spell" then input := rarity + "spell_empty.png"
@@ -53,9 +60,13 @@ card_background :=
 }
 card_assets :=
 {
-	if type == "ruler" then input := ""
-	else if type == "resonator" and rarity == "SR" and style == "Lapis Cluster" then input := "lapis_SRresonator_ass.png"
-	else if type == "resonator" and rarity == "R" and style == "Lapis Cluster" then input := "lapis_Rresonator_ass.png"
+	if type == "resonator" and rarity == "SR" and style == "Lapis Cluster" then input := "lapis_SRresonator_ass.png"
+	else if type == "resonator" and style == "Lapis Cluster" then input := "lapis_Rresonator_ass.png"
+	else if type == "spell" and rarity == "SR" and style == "Lapis Cluster" then input := "lapis_SRresonator_ass.png"
+	else if type == "spell" and style == "Lapis Cluster" then input := "lapis_Rresonator_ass.png"
+	else if type == "jruler" and style == "Lapis Cluster" then input := "lapis_SRresonator_ass.png"
+	else if type == "ruler" and style == "Lapis Cluster" then input := "lapis_SRresonator_ass.png"
+	else if type == "ruler" then input := ""
 	else if type == "jruler" then input := ""
 	else if type == "resonator" then input := rarity + "resonator_ass.png"
 	else if type == "spell" then input := rarity + "spell_ass.png"
@@ -66,8 +77,10 @@ card_assets :=
 }
 card_cost :=
 {
-	if rarity != "SR" then input := ""
-	else if type == "resonator" and rarity == "SR" and style == "Lapis Cluster" then input := "lapis_SRresonator_ass2.png"
+	if type == "jruler" and style == "Lapis Cluster" then input := "lapis_jruler_ass2.png"
+	else if type == "ruler" and style == "Lapis Cluster" then input := "lapis_jruler_ass2.png"
+	else if rarity != "SR" then input := ""
+	else if rarity == "SR" and style == "Lapis Cluster" then input := "lapis_SRresonator_ass2.png"
 	else if type == "ruler" then input := ""
 	else if type == "jruler" then input := ""
 	else if type == "resonator" then input := rarity + "resonator_ass2.png"
@@ -91,13 +104,31 @@ wheel_visible_check :=
 }
 top_bar_use :=
 {
-	if style == "Lapis Cluster" then input := "bars/lapis_topbar.png"
+	if color2 == "none" and style == "Lapis Cluster" then input := "bars/lapis_" +color1 + ".png"
+	else if style == "Lapis Cluster" and color3 == "none" then input := linear_blend(
+			image1: "bars/lapis_" + color2 + ".png", image2: "bars/lapis_" + color1 + ".png", 
+			x1:0, y1:0, 
+			x2:1, y2:0,
+		)
+	else if style == "Lapis Cluster" and color3 != "none" then input := linear_blend(
+			image1: "bars/lapis_" + color3 + ".png", image2: "bars/lapis_" + color1 + ".png", 
+			x1:0, y1:0, 
+			x2:1, y2:0,
+		)
 	else if type == "resonator" then input := "bars/restopbar.png"
 	else if type != "resonator" then input := "bars/topbar.png"
 }
+
+top_bar_masking :=
+{
+	if checker != "None" then input := masked_blend(light: "bars/mask.png", dark: "bars/lapis_" + color + ".png", mask: "bars/mask.png")
+	else input := "bars/lapis_transparent.png"
+}
+
 font_size_changer :=
 {
-	if type == "ruler" then input := 16
+	if style == "Lapis Cluster" then 16
+	else if type == "ruler" then input := 16
 	else if type == "jruler" then input := 16
 	else if type == "resonator" then input := 15
 	else if type == "spell" then input := 16
@@ -122,7 +153,8 @@ atk_def_font_size :=
 shield :=
 {
 	if style == "Lapis Cluster" and type == "resonator" and rarity == "SR" then input := "lapis_SRresonator_cover.png"
-	else if style == "Lapis Cluster" and type == "resonator" and rarity == "R" then input := "lapis_Rresonator_cover.png"
+	else if style == "Lapis Cluster" and type == "resonator" then input := "lapis_Rresonator_cover.png"
+	else if style == "Lapis Cluster" and type == "jruler" then input := "lapis_Rresonator_cover.png"
 }
 rules_font :=
 {
@@ -131,18 +163,32 @@ rules_font :=
 	else if query == "weight" and style == "Alice Cluster" then input := ""
 	else if query == "weight" and style == "Lapis Cluster" then input := ""
 	else if query == "size" and style == "Alice Cluster" then input := 13
-	else if query == "size" and style == "Lapis Cluster" then input := 16
+	else if query == "size" and style == "Lapis Cluster" then input := 19.42
 	else if query == "soft" and style == "Alice Cluster" then input := 1.1
-	else if query == "soft" and style == "Lapis Cluster" then input := 0.89
+	else if query == "soft" and style == "Lapis Cluster" then input := 1
 	else if query == "hard" and style == "Alice Cluster" then input := 1.5
-	else if query == "hard" and style == "Lapis Cluster" then input := 1.35
+	else if query == "hard" and style == "Lapis Cluster" then input := 1.32
+	else if query == "scaling" and style == "Alice Cluster" then input := 13
+	else if query == "scaling" and style == "Lapis Cluster" then input := 10
 }
 flavor_font :=
 {
 	if query == "size" and style == "Alice Cluster" then input := 13
-	else if query == "size" and style == "Lapis Cluster" then input := 14
+	else if query == "size" and style == "Lapis Cluster" then input := 12.4
 }
-
+card_rules_flavor_gap :=
+{
+	if ceil(set.stylesheet.card_style.flavor.content_height) == 0 then 0
+	else if ceil(set.stylesheet.card_style.flavor.content_height) != 0 and style == "Lapis Cluster" then 10
+	else if ceil(set.stylesheet.card_style.flavor.content_height) != 0 then 12
+}
+symbol_font :=
+{
+	if query == "size" and style == "Alice Cluster" then input := 9
+	else if query == "size" and style == "Lapis Cluster" then input := 14
+	else if query == "scaling" and style == "Alice Cluster" then input := 9
+	else if query == "scaling" and style == "Lapis Cluster" then input := 6
+}
 sr_skittles :=
 {
 	input := 1

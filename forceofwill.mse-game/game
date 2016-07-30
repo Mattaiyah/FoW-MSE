@@ -60,6 +60,38 @@ card field:
 	card list visible: true
 	card list width: 100
 	card list alignment: center
+
+card field:
+	type: choice
+	name: color2
+	description: The card's color
+	choice: none
+	choice: void
+	choice: white
+	choice: red
+	choice: blue
+	choice: green
+	choice: black
+	card list column: 4
+	card list visible: true
+	card list width: 100
+	card list alignment: center
+
+card field:
+	type: choice
+	name: color3
+	description: The card's color
+	choice: none
+	choice: void
+	choice: white
+	choice: red
+	choice: blue
+	choice: green
+	choice: black
+	card list column: 4
+	card list visible: true
+	card list width: 100
+	card list alignment: center
 	
 card field:
 	type: text
@@ -167,6 +199,13 @@ card field:
 	name: topBarColor
 	description: The matches the card's color. Transparent section for the card name
 	choice: default
+	
+card field:
+	type: choice
+	name: jrulerbutton
+	description: Badge of honor for cards strong enough to call themselves a Ruler or J-Ruler
+	choice: default
+	editable: false
 	
 card field:
 	type: choice
