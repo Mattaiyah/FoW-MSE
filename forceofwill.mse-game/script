@@ -1,7 +1,4 @@
-﻿this_text := {
-	num <= count_chosen(card.color2)
-}
-ceil :=
+﻿ceil :=
 {
 	if input > to_int(input) then to_int(input) +1
 	else input
@@ -263,4 +260,11 @@ ci_visible :=
 {
 	if num <= count_chosen(card.color2) then input := true
 	else input := false
+}
+
+ci_value :=
+{
+	split := split_text(match: ", ", card.color2)
+	if num <= count_chosen(card.color2) then split[num - 1]
+	else "none"
 }

@@ -218,7 +218,7 @@ card style:
 			green: {card_color(type: card.cardtype, color: "G", style: styling.card_format)}
 			black: {card_color(type: card.cardtype, color: "B", style: styling.card_format)}
 			void: {card_color(type: card.cardtype, color: "V", style: styling.card_format)}
-			default: void
+			default: none
 	color_img2:
 		visible: {ci_visible(num: 2)}
 		top: 532
@@ -233,7 +233,7 @@ card style:
 			green: {card_color(type: card.cardtype, color: "G", style: styling.card_format)}
 			black: {card_color(type: card.cardtype, color: "B", style: styling.card_format)}
 			void: {card_color(type: card.cardtype, color: "V", style: styling.card_format)}
-			default: void
+			default: none
 	color_img3:
 		visible: {ci_visible(num: 3)}
 		top: 504
@@ -248,7 +248,7 @@ card style:
 			green: {card_color(type: card.cardtype, color: "G", style: styling.card_format)}
 			black: {card_color(type: card.cardtype, color: "B", style: styling.card_format)}
 			void: {card_color(type: card.cardtype, color: "V", style: styling.card_format)}
-			default: void
+			default: none
 	color_img4:
 		visible: {ci_visible(num: 4)}
 		top: 476
@@ -263,7 +263,7 @@ card style:
 			green: {card_color(type: card.cardtype, color: "G", style: styling.card_format)}
 			black: {card_color(type: card.cardtype, color: "B", style: styling.card_format)}
 			void: {card_color(type: card.cardtype, color: "V", style: styling.card_format)}
-			default: void
+			default: none
 	color_img5:
 		visible: {ci_visible(num: 5)}
 		top: 448
@@ -278,7 +278,7 @@ card style:
 			green: {card_color(type: card.cardtype, color: "G", style: styling.card_format)}
 			black: {card_color(type: card.cardtype, color: "B", style: styling.card_format)}
 			void: {card_color(type: card.cardtype, color: "V", style: styling.card_format)}
-			default: void
+			default: none
 	color_img6:
 		visible: {ci_visible(num: 6)}
 		top: 420
@@ -293,7 +293,7 @@ card style:
 			green: {card_color(type: card.cardtype, color: "G", style: styling.card_format)}
 			black: {card_color(type: card.cardtype, color: "B", style: styling.card_format)}
 			void: {card_color(type: card.cardtype, color: "V", style: styling.card_format)}
-			default: void
+			default: none
 	resStatColor:
 		visible:
 			{
