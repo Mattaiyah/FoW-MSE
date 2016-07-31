@@ -13,7 +13,8 @@ card_flavor_height :=
 }
 card_color :=
 {
-	if style == "Lapis Cluster" then input := "color/" + color + "-fa.png"
+	if style == "Lapis Cluster" and (color == "GB" or color == "RB" or color == "RG" or color == "RU" or color == "UB" or color == "UG" or color == "WB" or color == "WG" or color == "WR" or color == "WU") then input := "color/blank.png"
+	else if style == "Lapis Cluster" then input := "color/" + color + "-fa.png"
 	else if type == "jruler" then input := "color/resonator_" + color + ".png"
 	else if type == "spell" then input := "color/spell_" + color + ".png"
 	else if type == "regalia" then input := "color/spell_" + color + ".png"
@@ -49,6 +50,7 @@ card_background :=
 	else if type == "spell" and (rarity == "U" or rarity == "C") and style == "Lapis Cluster" then input := "lapis_CUspell_empty.png"
 	else if type == "jruler" and style == "Lapis Cluster" then input := "lapis_jruler_empty.png"
 	else if type == "ruler" and style == "Lapis Cluster" then input := "lapis_ruler_empty.png"
+	else if type == "regalia" and style == "Lapis Cluster" then input := "lapis_reg_empty.png"
 	else if type == "ruler" then input := "ruler_empty.png"
 	else if type == "jruler" then input := "jruler_empty.png"
 	else if type == "resonator" then input := rarity + "resonator_empty.png"
@@ -66,6 +68,7 @@ card_assets :=
 	else if type == "spell" and style == "Lapis Cluster" then input := "lapis_Rresonator_ass.png"
 	else if type == "jruler" and style == "Lapis Cluster" then input := "lapis_SRresonator_ass.png"
 	else if type == "ruler" and style == "Lapis Cluster" then input := "lapis_SRresonator_ass.png"
+	else if type == "regalia" and style == "Lapis Cluster" then input := "lapis_SRresonator_ass.png"
 	else if type == "ruler" then input := ""
 	else if type == "jruler" then input := ""
 	else if type == "resonator" then input := rarity + "resonator_ass.png"
@@ -137,7 +140,8 @@ font_size_changer :=
 }
 font_color_changer :=
 {
-	if type == "ruler" then input := "rgb(255,255,255)"
+	if style == "Lapis Cluster" and type != "regalia" then input := "rgb(255,255,255)"
+	else if type == "ruler" then input := "rgb(255,255,255)"
 	else if type == "jruler" then input := "rgb(255,255,255)"
 	else if type == "stone" then input := "rgb(255,255,255)"
 	else if type == "regalia" then input := "rgb(222,178,0)"
