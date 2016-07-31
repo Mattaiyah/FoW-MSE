@@ -211,6 +211,7 @@ card style:
 		width: 28
 		height: 28
 		render style: image
+		z index: 12
 		choice images:
 			white: {card_color(type: card.cardtype, color: "W", style: styling.card_format)}
 			red: {card_color(type: card.cardtype, color: "R", style: styling.card_format)}
@@ -226,6 +227,7 @@ card style:
 		width: 28
 		height: 28
 		render style: image
+		z index: 12
 		choice images:
 			white: {card_color(type: card.cardtype, color: "W", style: styling.card_format)}
 			red: {card_color(type: card.cardtype, color: "R", style: styling.card_format)}
@@ -241,6 +243,7 @@ card style:
 		width: 28
 		height: 28
 		render style: image
+		z index: 12
 		choice images:
 			white: {card_color(type: card.cardtype, color: "W", style: styling.card_format)}
 			red: {card_color(type: card.cardtype, color: "R", style: styling.card_format)}
@@ -256,6 +259,7 @@ card style:
 		width: 28
 		height: 28
 		render style: image
+		z index: 12
 		choice images:
 			white: {card_color(type: card.cardtype, color: "W", style: styling.card_format)}
 			red: {card_color(type: card.cardtype, color: "R", style: styling.card_format)}
@@ -271,6 +275,7 @@ card style:
 		width: 28
 		height: 28
 		render style: image
+		z index: 12
 		choice images:
 			white: {card_color(type: card.cardtype, color: "W", style: styling.card_format)}
 			red: {card_color(type: card.cardtype, color: "R", style: styling.card_format)}
@@ -286,6 +291,7 @@ card style:
 		width: 28
 		height: 28
 		render style: image
+		z index: 12
 		choice images:
 			white: {card_color(type: card.cardtype, color: "W", style: styling.card_format)}
 			red: {card_color(type: card.cardtype, color: "R", style: styling.card_format)}

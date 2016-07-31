@@ -102,7 +102,7 @@ card field:
 	choice: blue
 	choice: green
 	choice: black
-	editable: true
+	editable: false
 	script: ci_value(num: 1)
 	
 card field:
@@ -115,7 +115,7 @@ card field:
 	choice: blue
 	choice: green
 	choice: black
-	editable: true
+	editable: false
 	script: ci_value(num: 2)
 	
 card field:
@@ -128,7 +128,7 @@ card field:
 	choice: blue
 	choice: green
 	choice: black
-	editable: true
+	editable: false
 	script: ci_value(num: 3)
 	
 card field:
@@ -141,7 +141,7 @@ card field:
 	choice: blue
 	choice: green
 	choice: black
-	editable: true
+	editable: false
 	script: ci_value(num: 4)
 	
 card field:
@@ -154,7 +154,7 @@ card field:
 	choice: blue
 	choice: green
 	choice: black
-	editable: true
+	editable: false
 	script: ci_value(num: 5)
 	
 card field:
@@ -167,7 +167,7 @@ card field:
 	choice: blue
 	choice: green
 	choice: black
-	editable: true
+	editable: false
 	script: ci_value(num: 6)
 	
 card field:

@@ -258,8 +258,8 @@ sort_name :=
 
 ci_visible :=
 {
-	if num <= count_chosen(card.color2) then input := true
-	else input := false
+	if num <= count_chosen(card.color2) then true
+	else false
 }
 
 ci_value :=
