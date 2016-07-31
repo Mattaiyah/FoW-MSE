@@ -1,4 +1,7 @@
-﻿ceil :=
+﻿this_text := {
+	num <= count_chosen(card.color2)
+}
+ceil :=
 {
 	if input > to_int(input) then to_int(input) +1
 	else input
@@ -251,3 +254,9 @@ sort_name :=
 	replace@(match: "(<b>|<i>|</b>|</i>)", replace: "") +
 	# Make lowercase
 	to_lower
+
+ci_visible :=
+{
+	if num <= count_chosen(card.color2) then input := true
+	else input := false
+}

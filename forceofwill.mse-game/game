@@ -35,6 +35,7 @@ card field:
 	card list visible: true
 	card list width: 100
 	card list alignment: left
+	script: this_text(num: 2)
 
 card field:
 	type: choice
@@ -62,10 +63,9 @@ card field:
 	card list alignment: center
 
 card field:
-	type: choice
+	type: multiple choice
 	name: color2
 	description: The card's color
-	choice: none
 	choice: void
 	choice: white
 	choice: red
@@ -92,6 +92,78 @@ card field:
 	card list visible: true
 	card list width: 100
 	card list alignment: center
+	
+card field:
+	type: choice
+	name: color_img1
+	choice: none
+	choice: void
+	choice: white
+	choice: red
+	choice: blue
+	choice: green
+	choice: black
+	editable: true
+	
+card field:
+	type: choice
+	name: color_img2
+	choice: none
+	choice: void
+	choice: white
+	choice: red
+	choice: blue
+	choice: green
+	choice: black
+	editable: true
+	
+card field:
+	type: choice
+	name: color_img3
+	choice: none
+	choice: void
+	choice: white
+	choice: red
+	choice: blue
+	choice: green
+	choice: black
+	editable: true
+	
+card field:
+	type: choice
+	name: color_img4
+	choice: none
+	choice: void
+	choice: white
+	choice: red
+	choice: blue
+	choice: green
+	choice: black
+	editable: true
+	
+card field:
+	type: choice
+	name: color_img5
+	choice: none
+	choice: void
+	choice: white
+	choice: red
+	choice: blue
+	choice: green
+	choice: black
+	editable: true
+	
+card field:
+	type: choice
+	name: color_img6
+	choice: none
+	choice: void
+	choice: white
+	choice: red
+	choice: blue
+	choice: green
+	choice: black
+	editable: true
 	
 card field:
 	type: text
