@@ -2344,7 +2344,7 @@ extra card style:
 	cardshadow25:
 		visible:
 			{
-				if styling.card_format == "Lapis Cluster" then true
+				if styling.card_format == "Lapis Cluster" and styling.is_full_art == "yes" then true
 				else if card.cardtype == "ruler" then false
 				else if card.cardtype == "jruler" then false
 				else if card.cardtype == "regalia" then false
@@ -2409,7 +2409,7 @@ extra card style:
 	cardshadow27:
 		visible:
 			{
-				if styling.card_format == "Lapis Cluster" then true
+				if styling.card_format == "Lapis Cluster" and styling.is_full_art == "yes" then true
 				else if card.cardtype == "ruler" then false
 				else if card.cardtype == "jruler" then false
 				else if card.cardtype == "regalia" then false
@@ -2474,7 +2474,7 @@ extra card style:
 	cardshadow30:
 		visible:
 			{
-				if styling.card_format == "Lapis Cluster" then true
+				if styling.card_format == "Lapis Cluster" and styling.is_full_art == "yes" then true
 				else if card.cardtype == "ruler" then false
 				else if card.cardtype == "jruler" then false
 				else if card.cardtype == "regalia" then false
@@ -2539,7 +2539,7 @@ extra card style:
 	cardshadow32:
 		visible:
 			{
-				if styling.card_format == "Lapis Cluster" then true
+				if styling.card_format == "Lapis Cluster" and styling.is_full_art == "yes" then true
 				else if card.cardtype == "ruler" then false
 				else if card.cardtype == "jruler" then false
 				else if card.cardtype == "regalia" then false
@@ -2604,7 +2604,7 @@ extra card style:
 	cardshadow26:
 		visible:
 			{
-				if styling.card_format == "Lapis Cluster" then true
+				if styling.card_format == "Lapis Cluster" and styling.is_full_art == "yes" then true
 				else if card.cardtype == "ruler" then false
 				else if card.cardtype == "jruler" then false
 				else if card.cardtype == "regalia" then false
@@ -2669,7 +2669,7 @@ extra card style:
 	cardshadow28:
 		visible:
 			{
-				if styling.card_format == "Lapis Cluster" then true
+				if styling.card_format == "Lapis Cluster" and styling.is_full_art == "yes" then true
 				else if card.cardtype == "ruler" then false
 				else if card.cardtype == "jruler" then false
 				else if card.cardtype == "regalia" then false
@@ -2734,7 +2734,7 @@ extra card style:
 	cardshadow29:
 		visible:
 			{
-				if styling.card_format == "Lapis Cluster" then true
+				if styling.card_format == "Lapis Cluster" and styling.is_full_art == "yes" then true
 				else if card.cardtype == "ruler" then false
 				else if card.cardtype == "jruler" then false
 				else if card.cardtype == "regalia" then false
@@ -2799,7 +2799,7 @@ extra card style:
 	cardshadow31:
 		visible:
 			{
-				if styling.card_format == "Lapis Cluster" then true
+				if styling.card_format == "Lapis Cluster" and styling.is_full_art == "yes" then true
 				else if card.cardtype == "ruler" then false
 				else if card.cardtype == "jruler" then false
 				else if card.cardtype == "regalia" then false
