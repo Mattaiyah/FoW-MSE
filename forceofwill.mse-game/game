@@ -171,6 +171,90 @@ card field:
 	script: ci_value(num: 6)
 	
 card field:
+	type: choice
+	name: lapis_type_void
+	show statistics: false
+	editable: false
+	choice: default
+	
+card field:
+	type: choice
+	name: lapis_type_white
+	show statistics: false
+	editable: false
+	choice: default
+	
+card field:
+	type: choice
+	name: lapis_type_red
+	show statistics: false
+	editable: false
+	choice: default
+	
+card field:
+	type: choice
+	name: lapis_type_blue
+	show statistics: false
+	editable: false
+	choice: default
+	
+card field:
+	type: choice
+	name: lapis_type_green
+	show statistics: false
+	editable: false
+	choice: default
+	
+card field:
+	type: choice
+	name: lapis_type_black
+	show statistics: false
+	editable: false
+	choice: default
+	
+card field:
+	type: choice
+	name: lapis_name_void
+	show statistics: false
+	editable: false
+	choice: default
+	
+card field:
+	type: choice
+	name: lapis_name_white
+	show statistics: false
+	editable: false
+	choice: default
+	
+card field:
+	type: choice
+	name: lapis_name_red
+	show statistics: false
+	editable: false
+	choice: default
+	
+card field:
+	type: choice
+	name: lapis_name_blue
+	show statistics: false
+	editable: false
+	choice: default
+	
+card field:
+	type: choice
+	name: lapis_name_green
+	show statistics: false
+	editable: false
+	choice: default
+	
+card field:
+	type: choice
+	name: lapis_name_black
+	show statistics: false
+	editable: false
+	choice: default
+	
+card field:
 	type: text
 	name: race
 	description: The race of the card

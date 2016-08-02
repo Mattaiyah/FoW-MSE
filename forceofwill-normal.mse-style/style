@@ -30,17 +30,29 @@ styling field:
 	description: Render the card in different styles
 	choice: Alice Cluster
 	choice: Lapis Cluster
-	initial: Alice Cluster
+	initial: Lapis Cluster
 
 ########################################
 
 card style:
 	
 	cardtype:
-		top: 0
-		left: 0
-		width: 650
-		height: 20
+		top:
+			{
+				if styling.card_format == "Lapis Cluster" then 562
+				else 0
+			}
+		left:
+			{
+				if styling.card_format == "Lapis Cluster" then 68
+				else 0
+			}
+		width:
+			{
+				if styling.card_format == "Lapis Cluster" then 130
+				else 650
+			}
+		height: 24
 		render style: hidden
 		z index: 15
 		
@@ -367,10 +379,14 @@ card style:
 			default: {spellcard_color(color: card.color)}
 
 	topBarColor:
+		visible:
+			{
+				if styling.card_format == "Lapis Cluster" then false
+				else true
+			}
 		top: 
 			{
-				if styling.card_format == "Lapis Cluster" then 42
-				else if (card.cardtype == "resonator") or
+				 if (card.cardtype == "resonator") or
 				(card.cardtype == "spell") then 33
 				else if card.cardtype == "regalia" then 58
 				else if card.cardtype != "resonator" then 0
@@ -403,7 +419,7 @@ card style:
 		z index: 1
 		render style: image
 		choice images:
-			default: {topcard_color(color: card.color, type: card.cardtype)}
+			default: {type_bar(color: "red")}
 	
 	jrulerbutton:
 		visible: 
@@ -965,6 +981,348 @@ card style:
 		height: 20
 		render style: hidden
 		z index: 15
+	lapis_type_void:
+		visible:
+			{
+				if styling.card_format == "Lapis Cluster" then true
+				else false
+			}
+		left: 51
+		top: 555
+		width:554
+		height: 39
+		z index: 11
+		render style: image
+		choice images:
+			default: {type_bar(color: "void")}
+	lapis_type_white:
+		visible:
+			{
+				if styling.card_format == "Lapis Cluster" then true
+				else false
+			}
+		left: 51
+		top: 555
+		width:554
+		height: 39
+		z index: 11
+		render style: image
+		choice images:
+			default: {type_bar(color: "white")}
+	lapis_type_red:
+		visible:
+			{
+				if styling.card_format == "Lapis Cluster" then true
+				else false
+			}
+		left: 51
+		top: 555
+		width:554
+		height: 39
+		z index: 11
+		render style: image
+		choice images:
+			default: {type_bar(color: "red")}
+	lapis_type_blue:
+		visible:
+			{
+				if styling.card_format == "Lapis Cluster" then true
+				else false
+			}
+		left: 51
+		top: 555
+		width:554
+		height: 39
+		z index: 11
+		render style: image
+		choice images:
+			default: {type_bar(color: "blue")}
+	lapis_type_green:
+		visible:
+			{
+				if styling.card_format == "Lapis Cluster" then true
+				else false
+			}
+		left: 51
+		top: 555
+		width:554
+		height: 39
+		z index: 11
+		render style: image
+		choice images:
+			default: {type_bar(color: "green")}
+	lapis_type_black:
+		visible:
+			{
+				if styling.card_format == "Lapis Cluster" then true
+				else false
+			}
+		left: 51
+		top: 555
+		width:554
+		height: 39
+		z index: 11
+		render style: image
+		choice images:
+			default: {type_bar(color: "black")}
+	lapis_name_void:
+		visible:
+			{
+				if styling.card_format == "Lapis Cluster" then true
+				else false
+			}
+		top: 
+			{
+				if styling.card_format == "Lapis Cluster" then 42
+				else if (card.cardtype == "resonator") or
+				(card.cardtype == "spell") then 33
+				else if card.cardtype == "regalia" then 58
+				else if card.cardtype != "resonator" then 0
+			}
+		left: 
+			{
+				if (card.cardtype == "jruler" or card.cardtype == "ruler") and styling.card_format == "Lapis Cluster" then 60
+				else if (card.cardtype == "resonator") or
+				(card.cardtype == "spell") or
+				(card.cardtype == "regalia") then 131
+				else if card.cardtype != "resonator" then 0
+			}
+		width: 
+			{
+				if (card.cardtype == "jruler" or card.cardtype == "ruler") and styling.card_format == "Lapis Cluster" then 528
+				else if styling.card_format == "Lapis Cluster" then 476
+				else if (card.cardtype == "resonator") or
+				(card.cardtype == "regalia") or
+				(card.cardtype == "spell") then 475
+				else if card.cardtype != "resonator" then 0
+			}
+		height: 
+			{
+				if (card.cardtype == "jruler" or card.cardtype == "ruler") and styling.card_format == "Lapis Cluster" then 48
+				else if (card.cardtype == "resonator") or
+				(card.cardtype == "regalia") or
+				(card.cardtype == "spell") then 41
+				else if card.cardtype != "resonator" then 0
+			}
+		z index: 1
+		render style: image
+		choice images:
+			default: {type_bar(color: "void")}
+	lapis_name_white:
+		visible:
+			{
+				if styling.card_format == "Lapis Cluster" then true
+				else false
+			}
+		top: 
+			{
+				if styling.card_format == "Lapis Cluster" then 42
+				else if (card.cardtype == "resonator") or
+				(card.cardtype == "spell") then 33
+				else if card.cardtype == "regalia" then 58
+				else if card.cardtype != "resonator" then 0
+			}
+		left: 
+			{
+				if (card.cardtype == "jruler" or card.cardtype == "ruler") and styling.card_format == "Lapis Cluster" then 60
+				else if (card.cardtype == "resonator") or
+				(card.cardtype == "spell") or
+				(card.cardtype == "regalia") then 131
+				else if card.cardtype != "resonator" then 0
+			}
+		width: 
+			{
+				if (card.cardtype == "jruler" or card.cardtype == "ruler") and styling.card_format == "Lapis Cluster" then 528
+				else if styling.card_format == "Lapis Cluster" then 476
+				else if (card.cardtype == "resonator") or
+				(card.cardtype == "regalia") or
+				(card.cardtype == "spell") then 475
+				else if card.cardtype != "resonator" then 0
+			}
+		height: 
+			{
+				if (card.cardtype == "jruler" or card.cardtype == "ruler") and styling.card_format == "Lapis Cluster" then 48
+				else if (card.cardtype == "resonator") or
+				(card.cardtype == "regalia") or
+				(card.cardtype == "spell") then 41
+				else if card.cardtype != "resonator" then 0
+			}
+		z index: 1
+		render style: image
+		choice images:
+			default: {type_bar(color: "white")}
+	lapis_name_red:
+		visible:
+			{
+				if styling.card_format == "Lapis Cluster" then true
+				else false
+			}
+		top: 
+			{
+				if styling.card_format == "Lapis Cluster" then 42
+				else if (card.cardtype == "resonator") or
+				(card.cardtype == "spell") then 33
+				else if card.cardtype == "regalia" then 58
+				else if card.cardtype != "resonator" then 0
+			}
+		left: 
+			{
+				if (card.cardtype == "jruler" or card.cardtype == "ruler") and styling.card_format == "Lapis Cluster" then 60
+				else if (card.cardtype == "resonator") or
+				(card.cardtype == "spell") or
+				(card.cardtype == "regalia") then 131
+				else if card.cardtype != "resonator" then 0
+			}
+		width: 
+			{
+				if (card.cardtype == "jruler" or card.cardtype == "ruler") and styling.card_format == "Lapis Cluster" then 528
+				else if styling.card_format == "Lapis Cluster" then 476
+				else if (card.cardtype == "resonator") or
+				(card.cardtype == "regalia") or
+				(card.cardtype == "spell") then 475
+				else if card.cardtype != "resonator" then 0
+			}
+		height: 
+			{
+				if (card.cardtype == "jruler" or card.cardtype == "ruler") and styling.card_format == "Lapis Cluster" then 48
+				else if (card.cardtype == "resonator") or
+				(card.cardtype == "regalia") or
+				(card.cardtype == "spell") then 41
+				else if card.cardtype != "resonator" then 0
+			}
+		z index: 1
+		render style: image
+		choice images:
+			default: {type_bar(color: "red")}
+	lapis_name_blue:
+		visible:
+			{
+				if styling.card_format == "Lapis Cluster" then true
+				else false
+			}
+		top: 
+			{
+				if styling.card_format == "Lapis Cluster" then 42
+				else if (card.cardtype == "resonator") or
+				(card.cardtype == "spell") then 33
+				else if card.cardtype == "regalia" then 58
+				else if card.cardtype != "resonator" then 0
+			}
+		left: 
+			{
+				if (card.cardtype == "jruler" or card.cardtype == "ruler") and styling.card_format == "Lapis Cluster" then 60
+				else if (card.cardtype == "resonator") or
+				(card.cardtype == "spell") or
+				(card.cardtype == "regalia") then 131
+				else if card.cardtype != "resonator" then 0
+			}
+		width: 
+			{
+				if (card.cardtype == "jruler" or card.cardtype == "ruler") and styling.card_format == "Lapis Cluster" then 528
+				else if styling.card_format == "Lapis Cluster" then 476
+				else if (card.cardtype == "resonator") or
+				(card.cardtype == "regalia") or
+				(card.cardtype == "spell") then 475
+				else if card.cardtype != "resonator" then 0
+			}
+		height: 
+			{
+				if (card.cardtype == "jruler" or card.cardtype == "ruler") and styling.card_format == "Lapis Cluster" then 48
+				else if (card.cardtype == "resonator") or
+				(card.cardtype == "regalia") or
+				(card.cardtype == "spell") then 41
+				else if card.cardtype != "resonator" then 0
+			}
+		z index: 1
+		render style: image
+		choice images:
+			default: {type_bar(color: "blue")}
+	lapis_name_green:
+		visible:
+			{
+				if styling.card_format == "Lapis Cluster" then true
+				else false
+			}
+		top: 
+			{
+				if styling.card_format == "Lapis Cluster" then 42
+				else if (card.cardtype == "resonator") or
+				(card.cardtype == "spell") then 33
+				else if card.cardtype == "regalia" then 58
+				else if card.cardtype != "resonator" then 0
+			}
+		left: 
+			{
+				if (card.cardtype == "jruler" or card.cardtype == "ruler") and styling.card_format == "Lapis Cluster" then 60
+				else if (card.cardtype == "resonator") or
+				(card.cardtype == "spell") or
+				(card.cardtype == "regalia") then 131
+				else if card.cardtype != "resonator" then 0
+			}
+		width: 
+			{
+				if (card.cardtype == "jruler" or card.cardtype == "ruler") and styling.card_format == "Lapis Cluster" then 528
+				else if styling.card_format == "Lapis Cluster" then 476
+				else if (card.cardtype == "resonator") or
+				(card.cardtype == "regalia") or
+				(card.cardtype == "spell") then 475
+				else if card.cardtype != "resonator" then 0
+			}
+		height: 
+			{
+				if (card.cardtype == "jruler" or card.cardtype == "ruler") and styling.card_format == "Lapis Cluster" then 48
+				else if (card.cardtype == "resonator") or
+				(card.cardtype == "regalia") or
+				(card.cardtype == "spell") then 41
+				else if card.cardtype != "resonator" then 0
+			}
+		z index: 1
+		render style: image
+		choice images:
+			default: {type_bar(color: "green")}
+	lapis_name_black:
+		visible:
+			{
+				if styling.card_format == "Lapis Cluster" then true
+				else false
+			}
+		top: 
+			{
+				if styling.card_format == "Lapis Cluster" then 42
+				else if (card.cardtype == "resonator") or
+				(card.cardtype == "spell") then 33
+				else if card.cardtype == "regalia" then 58
+				else if card.cardtype != "resonator" then 0
+			}
+		left: 
+			{
+				if (card.cardtype == "jruler" or card.cardtype == "ruler") and styling.card_format == "Lapis Cluster" then 60
+				else if (card.cardtype == "resonator") or
+				(card.cardtype == "spell") or
+				(card.cardtype == "regalia") then 131
+				else if card.cardtype != "resonator" then 0
+			}
+		width: 
+			{
+				if (card.cardtype == "jruler" or card.cardtype == "ruler") and styling.card_format == "Lapis Cluster" then 528
+				else if styling.card_format == "Lapis Cluster" then 476
+				else if (card.cardtype == "resonator") or
+				(card.cardtype == "regalia") or
+				(card.cardtype == "spell") then 475
+				else if card.cardtype != "resonator" then 0
+			}
+		height: 
+			{
+				if (card.cardtype == "jruler" or card.cardtype == "ruler") and styling.card_format == "Lapis Cluster" then 48
+				else if (card.cardtype == "resonator") or
+				(card.cardtype == "regalia") or
+				(card.cardtype == "spell") then 41
+				else if card.cardtype != "resonator" then 0
+			}
+		z index: 1
+		render style: image
+		choice images:
+			default: {type_bar(color: "black")}
 		
 extra card field:
 	type: choice

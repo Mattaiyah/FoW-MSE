@@ -268,3 +268,18 @@ ci_value :=
 	if num <= count_chosen(card.color2) then split[num - 1]
 	else "none"
 }
+
+type_bar :=
+{
+	if chosen(choice: "void", card.color2) and color != "void" then set_mask(image: "bars/lapis_" + color + ".png", mask: "bars/lapis_bar_gradient_clear.png")
+	else if chosen(choice: "void", card.color2) and color == "void" then set_mask(image: "bars/lapis_" + color + ".png", mask: "bars/lapis_bar_gradient_full.png")
+	else if count_chosen(card.color2) == 1 and chosen(choice: color, card.color2) then set_mask(image: "bars/lapis_" + color + ".png", mask: "bars/lapis_bar_gradient_full.png")
+	else if chosen(choice: color, card.color2) then (
+		pos := 0
+		for each k:v in split_text(match: ", ", card.color2) do (
+			if v == color then pos := k + 1
+		)
+		set_mask(image: "bars/lapis_" + color + ".png", mask: "bars/lapis_bar_gradient_" + count_chosen(card.color2) + "_" + pos + ".png")
+	)
+	else set_mask(image: "bars/lapis_" + color + ".png", mask: "bars/lapis_bar_gradient_clear.png")
+}
