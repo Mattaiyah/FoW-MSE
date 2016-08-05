@@ -211,12 +211,15 @@ color_sort :=
 	else if color == "black" then "E"
 	else if color != "" and color != "void" then "F"
 	else if color == "void" then "G"
+	else if color == "" then "H"
 }
 type_sort :=
 {
 	if card.cardtype == "ruler" then "A"
-	else if card.cardtype == "jruler" then "A"
-	else "B"
+	else if card.cardtype == "jruler" then "B"
+	else if card.cardtype == "stone" then "E"
+	else if card.cardtype == "regalia" then "D"
+	else "C"
 }
 
 sort_name :=
