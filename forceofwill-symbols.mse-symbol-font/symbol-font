@@ -11,197 +11,197 @@ horizontal space: 2
 symbol:
 	code: B
 	image: black-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: G
 	image: green-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: R
 	image: red-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: U
 	image: blue-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: W
 	image: white-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: V
 	image: void-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: M
 	image: moon-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: 0
 	image: 0-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: 1
 	image: 1-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: 2
 	image: 2-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: 3
 	image: 3-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: 4
 	image: 4-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: 5
 	image: 5-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: 6
 	image: 6-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: 7
 	image: 7-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: 8
 	image: 8-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: 9
 	image: 9-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: X
 	image: X-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: T
 	image: rest-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: activate
 	image: activate-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: continuous
 	image: continuous-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: enter
 	image: enter-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: shift
 	image: shift-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: incarnation
 	image: incarnation-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: judgment
 	image: judgment-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: stealth
 	image: stealth-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: flying
 	image: flying-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: imperishable
 	image: imperishable-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: pierce
 	image: pierce-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: swiftness
 	image: swiftness-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: targetattack
 	image: targetattack-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: awakening
 	image: awakening-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: evolution
 	image: evolution-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: explode
 	image: explode-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: remnant
 	image: remnant-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: quickcast
 	image: quickcast-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: trigger
 	image: trigger-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: firststrike
 	image: firststrike-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: shift
 	image: shift-fa.png
-	enabled: { full_art() }
+	enabled: { full_art }
 	draw text: -1
 	
 ######################################## Regular Symbols

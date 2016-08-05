@@ -107,18 +107,7 @@ wheel_visible_check :=
 }
 top_bar_use :=
 {
-	if color2 == "none" and style == "Lapis Cluster" then input := "bars/lapis_" +color1 + ".png"
-	else if style == "Lapis Cluster" and color3 == "none" then input := linear_blend(
-			image1: "bars/lapis_" + color2 + ".png", image2: "bars/lapis_" + color1 + ".png", 
-			x1:0, y1:0, 
-			x2:1, y2:0,
-		)
-	else if style == "Lapis Cluster" and color3 != "none" then input := linear_blend(
-			image1: "bars/lapis_" + color3 + ".png", image2: "bars/lapis_" + color1 + ".png", 
-			x1:0, y1:0, 
-			x2:1, y2:0,
-		)
-	else if type == "resonator" then input := "bars/restopbar.png"
+	if type == "resonator" then input := "bars/restopbar.png"
 	else if type != "resonator" then input := "bars/topbar.png"
 }
 
@@ -207,43 +196,27 @@ card_number :=
 	position (
 		of: card
 		in: set
-		order_by: { color_sort() + type_sort() + rarity_sort() + sort_name(card.card_name) }
+		order_by: { color_sort() + type_sort() + sort_name(card.card_name) }
 	) + 1
 }
 color_sort :=
 {
-	if card.color == "white" then "A"
-	else if card.color == "red" then "B"
-	else if card.color == "blue" then "C"
-	else if card.color == "green" then "D"
-	else if card.color == "black" then "E"
-	else if card.color == "WR" then "F"
-	else if card.color == "WU" then "G"
-	else if card.color == "WG" then "H"
-	else if card.color == "WB" then "I"
-	else if card.color == "RU" then "J"
-	else if card.color == "RG" then "K"
-	else if card.color == "RB" then "L"
-	else if card.color == "UG" then "M"
-	else if card.color == "UB" then "N"
-	else if card.color == "GB" then "O"
-	else if card.color == "void" then "P"
+	if styling.card_format == "Alice Cluster" then color := card.color
+	else if styling.card_format == "Lapis Cluster" then color := card.color2
+	
+	if color == "white" then "A"
+	else if color == "red" then "B"
+	else if color == "blue" then "C"
+	else if color == "green" then "D"
+	else if color == "black" then "E"
+	else if color != "" and color != "void" then "F"
+	else if color == "void" then "G"
 }
 type_sort :=
 {
 	if card.cardtype == "ruler" then "A"
-	else if card.cardtype == "jruler" then "B"
-	else if card.cardtype == "resonator" then "C"
-	else if card.cardtype == "spell" then "D"
-	else if card.cardtype == "regalia" then "E"
-	else if card.cardtype == "stone" then "F"
-}
-rarity_sort :=
-{
-	if card.rarity == "SR" then "A"
-	else if card.rarity == "R" then "B"
-	else if card.rarity == "U" then "C"
-	else if card.rarity == "C" then "D"
+	else if card.cardtype == "jruler" then "A"
+	else "B"
 }
 
 sort_name :=

@@ -20,7 +20,7 @@ card background: rgb(255,255,255)
 
 init script:
 	full_art := "no"
-	style := {styling.card_format }
+	style := { styling.card_format }
 
 ########################################
 	
@@ -1393,54 +1393,6 @@ extra card field:
 	script: card.card_name
 	editable: false
 	save value: false
-extra card field:
-	type: text
-	name: cardshadow25
-	script: card.race
-	editable: false
-	save value: false
-extra card field:
-	type: text
-	name: cardshadow27
-	script: card.race
-	editable: false
-	save value: false
-extra card field:
-	type: text
-	name: cardshadow30
-	script: card.race
-	editable: false
-	save value: false
-extra card field:
-	type: text
-	name: cardshadow32
-	script: card.race
-	editable: false
-	save value: false
-extra card field:
-	type: text
-	name: cardshadow26
-	script: card.race
-	editable: false
-	save value: false
-extra card field:
-	type: text
-	name: cardshadow28
-	script: card.race
-	editable: false
-	save value: false
-extra card field:
-	type: text
-	name: cardshadow29
-	script: card.race
-	editable: false
-	save value: false
-extra card field:
-	type: text
-	name: cardshadow31
-	script: card.race
-	editable: false
-	save value: false
 extra card style:
 	layer:
 		top: 0
@@ -1537,10 +1489,10 @@ extra card style:
 	top bar:
 		visible:
 			{
-				if card_rules_height() != 0 then true
+				if styling.card_format == "Lapis Cluster" then false
+				else if card_rules_height() != 0 then true
 				else if card_flavor_height() != 0 then true
-				else if card_rules_height() == 0 then false
-				else if card_rules_height() == 0 then false
+				else false
 			}
 		left: 
 			{
@@ -1898,118 +1850,5 @@ extra card style:
 				}
 			shadow displacement x: -1
 			shadow displacement y: -1
-			shadow blur: 0
-		z index: 11
-extra card style:
-	cardshadow25:
-		visible:
-			{
-				if styling.card_format == "Lapis Cluster" then true
-				else false
-			}
-		top: 
-			{
-				if styling.card_format == "Lapis Cluster" then 562
-				else if card.cardtype == "ruler" then 842
-				else if card.cardtype == "stone" then 838
-				else if card.cardtype == "jruler" then 771
-				else if card.cardtype == "resonator" then (744 - card_rules_height() - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
-				else if card.cardtype == "spell" then 837
-				else if card.cardtype == "regalia" then 837
-			}
-		left: 
-			{
-				if styling.card_format == "Lapis Cluster" and (card.cardtype == "ruler" or card.cardtype == "jruler") then 206
-				else if styling.card_format == "Lapis Cluster" then 68
-				else if card.cardtype == "ruler" then 242
-				else if card.cardtype == "stone" then 50
-				else if card.cardtype == "jruler" then 234
-				else if card.cardtype == "resonator" then 54
-				else if card.cardtype == "spell" then 37
-				else if card.cardtype == "regalia" then 37
-			}
-		width: 
-			{
-				if styling.card_format == "Lapis Cluster" and (card.cardtype == "ruler" or card.cardtype == "jruler") then 260
-				else if styling.card_format == "Lapis Cluster" then 342
-				else if card.cardtype == "ruler" then 253
-				else if card.cardtype == "stone" then 545
-				else if card.cardtype == "jruler" then 361
-				else if card.cardtype == "resonator" then 355
-				else if card.cardtype == "spell" then 465
-				else if card.cardtype == "regalia" then 465
-			}
-		height: 30
-		alignment: 
-			{
-				if styling.card_format == "Lapis Cluster" then "stretch if-overflow"
-				else if card.cardtype != "resonator" then "top center stretch if-overflow"
-				else if card.cardtype == "resonator" then "stretch if-overflow"
-			}
-		font:
-			name: Constantia
-			size: {font_size_changer(type: card.cardtype, style: styling.card_format)}
-			color: 
-				{
-					if card.cardtype == "resonator" or styling.card_format == "Lapis Cluster" then "black"
-					else "white"
-				}
-			shadow color: white
-			shadow displacement x: 1.5
-			shadow displacement y: 1.5
-			shadow blur: 0
-		z index: 11
-extra card style:
-	cardshadow27:
-		visible:
-			{
-				if styling.card_format == "Lapis Cluster" then true
-				else false
-			}
-		top: 
-			{
-				if styling.card_format == "Lapis Cluster" then 562
-				else if card.cardtype == "ruler" then 842
-				else if card.cardtype == "stone" then 838
-				else if card.cardtype == "jruler" then 771
-				else if card.cardtype == "resonator" then (744 - card_rules_height() - card_flavor_height() - card_rules_flavor_gap(style: styling.card_format))
-				else if card.cardtype == "spell" then 837
-				else if card.cardtype == "regalia" then 837
-			}
-		left: 
-			{
-				if styling.card_format == "Lapis Cluster" and (card.cardtype == "ruler" or card.cardtype == "jruler") then 206
-				else if styling.card_format == "Lapis Cluster" then 68
-				else if card.cardtype == "ruler" then 242
-				else if card.cardtype == "stone" then 50
-				else if card.cardtype == "jruler" then 234
-				else if card.cardtype == "resonator" then 54
-				else if card.cardtype == "spell" then 37
-				else if card.cardtype == "regalia" then 37
-			}
-		width: 
-			{
-				if styling.card_format == "Lapis Cluster" then 520
-				else 544
-			}
-		height: 
-			script:
-				if styling.card_format == "Lapis Cluster" then (243 - card_flavor_height())
-				else (max(19, card_rules_height()))
-		line height hard: {rules_font(query: "hard", style: styling.card_format)}
-		line height soft: {rules_font(query: "soft", style: styling.card_format)}
-		symbol font:
-			name: forceofwill-symbols
-			size: {symbol_font(query: "size", style: styling.card_format)}
-			scale down to: 9
-		font:
-			name: {rules_font(query: "font", style: styling.card_format)}
-			size: {rules_font(query: "size", style: styling.card_format)}
-			color: rgb(0,0,0)
-			weight: {rules_font(query: "weight", style: styling.card_format)}
-			scale down to: 13
-			shadow color: white
-			shadow displacement x: 0
-			shadow displacement y: 1.5
 			shadow blur: 0
 		z index: 11
