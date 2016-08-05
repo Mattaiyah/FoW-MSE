@@ -43,6 +43,7 @@ jrulerbutton :=
 card_background :=
 {
 	if type == "resonator" and rarity == "SR" and style == "Lapis Cluster" then input := "lapis_SRresonator_empty.png"
+	else if type == "stone" and style == "Lapis Cluster" then input := ""
 	else if type == "resonator" and rarity == "R" and style == "Lapis Cluster" then input := "lapis_Rresonator_empty.png"
 	else if type == "resonator" and (rarity == "U" or rarity == "C") and style == "Lapis Cluster" then input := "lapis_CUresonator_empty.png"
 	else if type == "spell" and rarity == "SR" and style == "Lapis Cluster" then input := "lapis_SRspell_empty.png"
@@ -63,6 +64,7 @@ card_background :=
 card_assets :=
 {
 	if type == "resonator" and rarity == "SR" and style == "Lapis Cluster" then input := "lapis_SRresonator_ass.png"
+	else if type == "stone" and style == "Lapis Cluster" then input := "lapis_Rresonator_ass.png"
 	else if type == "resonator" and style == "Lapis Cluster" then input := "lapis_Rresonator_ass.png"
 	else if type == "spell" and rarity == "SR" and style == "Lapis Cluster" then input := "lapis_SRresonator_ass.png"
 	else if type == "spell" and style == "Lapis Cluster" then input := "lapis_Rresonator_ass.png"
@@ -82,6 +84,7 @@ card_cost :=
 {
 	if type == "jruler" and style == "Lapis Cluster" then input := "lapis_jruler_ass2.png"
 	else if type == "ruler" and style == "Lapis Cluster" then input := "lapis_jruler_ass2.png"
+	else if type == "stone" and style == "Lapis Cluster" then input := "lapis_stone_ass.png"
 	else if rarity != "SR" then input := ""
 	else if rarity == "SR" and style == "Lapis Cluster" then input := "lapis_SRresonator_ass2.png"
 	else if type == "ruler" then input := ""
@@ -247,7 +250,9 @@ ci_value :=
 
 type_bar :=
 {
-	if chosen(choice: "void", card.color2) and color != "void" then set_mask(image: "bars/lapis_" + color + ".png", mask: "bars/lapis_bar_gradient_clear.png")
+	if card.cardtype == "stone" then ""
+	
+	else if chosen(choice: "void", card.color2) and color != "void" then set_mask(image: "bars/lapis_" + color + ".png", mask: "bars/lapis_bar_gradient_clear.png")
 	else if chosen(choice: "void", card.color2) and color == "void" then set_mask(image: "bars/lapis_" + color + ".png", mask: "bars/lapis_bar_gradient_full.png")
 	else if count_chosen(card.color2) == 1 and chosen(choice: color, card.color2) then set_mask(image: "bars/lapis_" + color + ".png", mask: "bars/lapis_bar_gradient_full.png")
 	else if chosen(choice: color, card.color2) then (

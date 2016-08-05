@@ -214,6 +214,13 @@ card field:
 	
 card field:
 	type: choice
+	name: lapis_type_stone
+	show statistics: false
+	editable: false
+	choice: default
+	
+card field:
+	type: choice
 	name: lapis_name_void
 	show statistics: false
 	editable: false
@@ -250,6 +257,13 @@ card field:
 card field:
 	type: choice
 	name: lapis_name_black
+	show statistics: false
+	editable: false
+	choice: default
+	
+card field:
+	type: choice
+	name: lapis_name_stone
 	show statistics: false
 	editable: false
 	choice: default
