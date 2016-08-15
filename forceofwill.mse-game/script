@@ -130,6 +130,16 @@ font_size_changer :=
 	else if type == "regalia" then input := 16
 	else if type == "stone" then input := 16
 }
+
+race_font_color :=
+{
+	if type == "resonator" and style = "Alice Cluster" then input := "black"
+	else if style == "Alice Cluster" then input := "white"
+	else if (type == "ruler" or type == "jruler") and type == "Lapis Cluster" and color2 == "green" then input := "white"
+	else if (color1 == "green" or color1 == "black") and type == "Lapis Cluster" then input := "white"
+	else if type == "Lapis Cluster" then input := "black"
+}
+
 font_color_changer :=
 {
 	if style == "Lapis Cluster" and type != "regalia" then input := "rgb(255,255,255)"
