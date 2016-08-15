@@ -884,8 +884,11 @@ card style:
 			size: {font_size_changer(type: card.cardtype, style: styling.card_format)}
 			color: 
 				{
-					if card.cardtype == "resonator" or styling.card_format == "Lapis Cluster" then "black"
-					else "white"
+					if styling.card_format == "resonator" and styling.card_format = "Alice Cluster" then "black"
+					else if styling.card_format == "Alice Cluster" then "white"
+					else if (card.cardtype == "ruler" or card.cardtype == "jruler") and styling.card_format == "Lapis Cluster" and card.color_img2 == "green" then "white"
+					else if (card.color_img1 == "green" or card.color_img1 == "black") and styling.card_format == "Lapis Cluster" then "white"
+					else if styling.card_format == "Lapis Cluster" then "black"
 				}
 			max stretch: 0.5
 		z index: 14
@@ -958,23 +961,36 @@ card style:
 				if styling.card_format == "Lapis Cluster" then 520
 				else 544
 			}
-		height: { max(19, card_flavor_height()) }
+		height: 
+			{
+				if card.rules == "" and styling.card_format == "Lapis Cluster" then 248
+				else max(19, card_flavor_height())
+			}
 		font:
 			name: Constantia
-			size: {flavor_font(query: "size", style: styling.card_format)}
+			size: 
+				{
+					if card.rules == "" and styling.card_format == "Lapis Cluster" then 18
+					else flavor_font(query: "size", style: styling.card_format)
+				}
+			scale down to: 13
 			color: rgb(0,0,0)
-		alignment: center
+		alignment: 
+			{
+				if card.rules == "" and styling.card_format == "Lapis Cluster" then "middle center"
+				else "center"
+			}
 		z index: 14
 	
 	card_id:
 		bottom: 
 			{
-				if styling.card_format == "Lapis Cluster" then 900
+				if styling.card_format == "Lapis Cluster" then 902
 				else 906
 			}
 		left: 
 			{
-				if styling.card_format == "Lapis Cluster" then 66
+				if styling.card_format == "Lapis Cluster" then 75
 				else 54
 			}
 		width: 30
@@ -990,7 +1006,7 @@ card style:
 	artist:
 		bottom: 
 			{
-				if styling.card_format == "Lapis Cluster" then 900
+				if styling.card_format == "Lapis Cluster" then 902
 				else 906
 			}
 		right: 
@@ -1013,10 +1029,10 @@ card style:
 	rarity:
 		bottom: 
 			{
-				if styling.card_format == "Lapis Cluster" then 900
+				if styling.card_format == "Lapis Cluster" then 902
 				else 906
 			}
-		left: 84
+		left: 88
 		width: 60
 		height: 20
 		render style: hidden
