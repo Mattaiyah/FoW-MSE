@@ -884,7 +884,7 @@ card style:
 			size: {font_size_changer(type: card.cardtype, style: styling.card_format)}
 			color: 
 				{
-					if styling.card_format == "resonator" and styling.card_format = "Alice Cluster" then "black"
+					if card.cardtype == "resonator" and styling.card_format = "Alice Cluster" then "black"
 					else if styling.card_format == "Alice Cluster" then "white"
 					else if (card.cardtype == "ruler" or card.cardtype == "jruler") and styling.card_format == "Lapis Cluster" and card.color_img2 == "green" then "white"
 					else if (card.color_img1 == "green" or card.color_img1 == "black") and styling.card_format == "Lapis Cluster" then "white"
