@@ -174,8 +174,6 @@ rules_font :=
 	else if query == "soft" and style == "Lapis Cluster" then input := 1
 	else if query == "hard" and style == "Alice Cluster" then input := 1.5
 	else if query == "hard" and style == "Lapis Cluster" then input := 1.32
-	else if query == "scaling" and style == "Alice Cluster" then input := 13
-	else if query == "scaling" and style == "Lapis Cluster" then input := 10
 }
 flavor_font :=
 {
@@ -191,9 +189,8 @@ card_rules_flavor_gap :=
 symbol_font :=
 {
 	if query == "size" and style == "Alice Cluster" then input := 9
-	else if query == "size" and style == "Lapis Cluster" then input := 14
-	else if query == "scaling" and style == "Alice Cluster" then input := 9
-	else if query == "scaling" and style == "Lapis Cluster" then input := 6
+	else if query == "sizefa" and style == "Lapis Cluster" then input := 6
+	else if query == "size" and style == "Lapis Cluster" then input := 7
 }
 sr_skittles :=
 {

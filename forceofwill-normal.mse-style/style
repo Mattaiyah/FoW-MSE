@@ -929,7 +929,7 @@ card style:
 		symbol font:
 			name: forceofwill-symbols
 			size: {symbol_font(query: "size", style: styling.card_format)}
-			scale down to: 9
+			scale down to: 4.5
 		font:
 			name: {rules_font(query: "font", style: styling.card_format)}
 			size: {rules_font(query: "size", style: styling.card_format)}

@@ -105,102 +105,102 @@ symbol:
 	draw text: -1
 symbol:
 	code: activate
-	image: activate-fa.png
+	image: lapis-activate.png
 	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: continuous
-	image: continuous-fa.png
+	image: lapis-continuous.png
 	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: enter
-	image: enter-fa.png
+	image: lapis-enter.png
 	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: shift
-	image: shift-fa.png
+	image: lapis-shift.png
 	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: incarnation
-	image: incarnation-fa.png
+	image: lapis-incarnation.png
 	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: judgment
-	image: judgment-fa.png
+	image: lapis-judgment.png
 	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: stealth
-	image: stealth-fa.png
+	image: lapis-stealth.png
 	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: flying
-	image: flying-fa.png
+	image: lapis-flying.png
 	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: imperishable
-	image: imperishable-fa.png
+	image: lapis-imperishable.png
 	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: pierce
-	image: pierce-fa.png
+	image: lapis-pierce.png
 	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: swiftness
-	image: swiftness-fa.png
+	image: lapis-swiftness.png
 	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: targetattack
-	image: targetattack-fa.png
+	image: lapis-targetattack.png
 	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: awakening
-	image: awakening-fa.png
+	image: lapis-awakening.png
 	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: evolution
-	image: evolution-fa.png
+	image: lapis-evolution.png
 	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: explode
-	image: explode-fa.png
+	image: lapis-explode.png
 	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: remnant
-	image: remnant-fa.png
+	image: lapis-remnant.png
 	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: quickcast
-	image: quickcast-fa.png
+	image: lapis-quickcast.png
 	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: trigger
-	image: trigger-fa.png
+	image: lapis-trigger.png
 	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: firststrike
-	image: firststrike-fa.png
+	image: lapis-firststrike.png
 	enabled: { full_art }
 	draw text: -1
 symbol:
 	code: shift
-	image: shift-fa.png
+	image: lapis-shift.png
 	enabled: { full_art }
 	draw text: -1
 	
@@ -240,61 +240,64 @@ symbol:
 	image: X.png
 symbol:
 	code: activate
-	image: activate.png
+	image: lapis-activate.png
 symbol:
 	code: continuous
-	image: continuous.png
+	image: lapis-continuous.png
 symbol:
 	code: enter
-	image: enter.png
+	image: lapis-enter.png
 symbol:
 	code: incarnation
-	image: incarnation.png
+	image: lapis-incarnation.png
 symbol:
 	code: judgment
-	image: judgment.png
+	image: lapis-judgment.png
 symbol:
 	code: stealth
-	image: stealth.png
+	image: lapis-stealth.png
 symbol:
 	code: flying
-	image: flying.png
+	image: lapis-flying.png
 symbol:
 	code: imperishable
-	image: imperishable.png
+	image: lapis-imperishable.png
 symbol:
 	code: pierce
-	image: pierce.png
+	image: lapis-pierce.png
 symbol:
 	code: swiftness
-	image: swiftness.png
+	image: lapis-swiftness.png
 symbol:
 	code: targetattack
-	image: targetattack.png
+	image: lapis-targetattack.png
 symbol:
 	code: awakening
-	image: awakening.png
+	image: lapis-awakening.png
 symbol:
 	code: evolution
-	image: evolution.png
+	image: lapis-evolution.png
 symbol:
 	code: explode
-	image: explode.png
+	image: lapis-explode.png
 symbol:
 	code: remnant
-	image: remnant.png
+	image: lapis-remnant.png
 symbol:
 	code: quickcast
-	image: quickcast.png
+	image: lapis-quickcast.png
 symbol:
 	code: trigger
-	image: trigger.png
+	image: lapis-trigger.png
 symbol:
 	code: firststrike
-	image: firststrike.png
+	image: lapis-firststrike.png
 symbol:
 	code: shift
-	image: shift.png
+	image: lapis-shift.png
+symbol:
+	code: bestow
+	image: lapis-bestow.png
 symbol:
 	code: B
 	image: black.png
