@@ -17,7 +17,7 @@ card field:
 card field:
 	type: image
 	name: card_background
-	description: The card's foreground art. !!! You cannot modify the card cost with this active !!!
+	description: The card's foreground art
 	show statistics: false
 	editable: true
 
@@ -57,7 +57,6 @@ card field:
 	choice: WG
 	choice: WR
 	choice: WU
-	card list column: 4
 	card list visible: true
 	card list width: 100
 	card list alignment: center
@@ -72,7 +71,6 @@ card field:
 	choice: blue
 	choice: green
 	choice: black
-	card list column: 4
 	card list visible: true
 	card list width: 100
 	card list alignment: center
@@ -88,7 +86,6 @@ card field:
 	choice: blue
 	choice: green
 	choice: black
-	card list column: 4
 	card list visible: true
 	card list width: 100
 	card list alignment: center
@@ -307,7 +304,7 @@ card field:
 card field:
 	type: text
 	name: card_id
-	editable: true
+	editable: false
 	save value: false
 	identifying: true
 	script: card_serial()
