@@ -189,6 +189,7 @@ card_rules_flavor_gap :=
 symbol_font :=
 {
 	if query == "size" and style == "Alice Cluster" then input := 4.5
+	else if query == "sizefa" and style == "Alice Cluster" then input := 4.5
 	else if query == "sizefa" and style == "Lapis Cluster" then input := 7
 	else if query == "size" and style == "Lapis Cluster" then input := 7
 }
